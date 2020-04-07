@@ -10,13 +10,13 @@ action(app.tab_close):
 #  Move the current tab to a new window
   
 action(app.tab_next):
-	key(cmd-alt-right)
+	key(ctrl-tab)
 	
 action(app.tab_open):
 	key(cmd-t)
 	
 action(app.tab_previous):
-	key(cmd-alt-left)
+	key(ctrl-shift-tab)
 	
 action(app.tab_reopen):
 	key(cmd-shift-t)
