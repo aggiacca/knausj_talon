@@ -55,6 +55,9 @@ ctx.lists['self.mouse_button'] = {
      
      #left click
      'chiff': '0',
+
+     #middle click,
+     'middle': '2'
 }
 
 @mod.capture
