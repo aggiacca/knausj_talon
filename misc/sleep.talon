@@ -21,7 +21,7 @@ talon sleep:
     mode.disable('command')
     mode.enable('dictation')
 
-talon wake:
+talon should wake:
     mode.enable('command')
     mode.disable('dictation')
 	
