@@ -1,0 +1,5 @@
+spectacle next display: key(ctrl-alt-cmd-right)
+spectacle previous display: key(ctrl-alt-cmd-left)
+spectacle right half: key(alt-cmd-right)
+spectacle left half: key(alt-cmd-left)
+spectacle fullscreen: key(alt-cmd-f)
