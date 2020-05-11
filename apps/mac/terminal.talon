@@ -16,8 +16,7 @@ action(app.tab_previous):
   key(ctrl-shift-tab)
 action(app.window_open):
   key(cmd-n)
-kill all:
-  key(ctrl-c)
+
 rerun search:
   key(ctrl-r)
 run last:
@@ -35,3 +34,30 @@ resume:
   insert("fg")
   key(enter)
 
+node start:
+  insert("npm run start")
+node install:
+  insert("npm install")
+node storybook:
+  insert("npm run storybook")
+node build:
+  insert("npm run build")
+node link:
+  insert("npm link")
+node link runtime:
+  insert("npm link @ruist/cxr")
+
+
+
+
+project builder:
+  insert("cd ~/Documents/GitRepos/web-builder")
+  key(enter)
+  
+project runtime:
+  insert("cd ~/Documents/GitRepos/node-cxr")
+  key(enter)
+  
+project gateway:
+  insert("cd ~/Documents/GitRepos/node-session-gateway")
+  key(enter)
