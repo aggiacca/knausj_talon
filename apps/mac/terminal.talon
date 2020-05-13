@@ -46,9 +46,13 @@ node link:
   insert("npm link")
 node link runtime:
   insert("npm link @ruist/cxr")
+clean modules:
+    insert("rm -rf node_modules")
+    key(enter)
 
-
-
+dev login:
+  insert("aws_creds -u adamg@airkit.com -r dev-fulladmin -f")
+  key(enter)
 
 project builder:
   insert("cd ~/Documents/GitRepos/web-builder")
