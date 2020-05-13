@@ -1,3 +1,4 @@
+#defines the various mode commands 
 mode: all
 -
 talon sleep: speech.disable()
