@@ -54,6 +54,9 @@ dev login:
   insert("aws_creds -u adamg@airkit.com -r dev-fulladmin -f")
   key(enter)
 
+service tool:
+  insert("service-tool -v")
+
 project builder:
   insert("cd ~/Documents/GitRepos/web-builder")
   key(enter)
