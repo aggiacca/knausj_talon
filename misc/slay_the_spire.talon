@@ -1,15 +1,34 @@
-current position: user.test_position()
+app: SlayTheSpire
+-
+
+# Testing/Debugging
+position: user.test_position()
 
 
+show enemy: user.show_enemy_grid()
+hide enemy: user.hide_enemy_grid()
 
-enemy one: user.enemy_position_1()
-enemy two: user.enemy_position_2()
-enemy three: user.enemy_position_3()
-enemy four: user.enemy_position_4()
+enemy <number>: user.enemy_position(number)
+run start <number>: user.choose_run_start_option(number)
+player: user.character_position()
+potion <number>: user.potion_position(number)
 
+chest: user.chest_position()
+
+act reward <number>: user.boss_relic_position(number)
 
 reward: user.spoils_1()
 
-proceed: user.proceed()
+choose card <number>: user.reward_choose_a_card(number)
+
+skip card: user.skip_position()
+
+proceed: 
+    user.proceed()
+    user.mouse_toggle_control_mouse()
+    
+select area:
+    user.select_area()
+    user.mouse_toggle_control_mouse()
 
 
