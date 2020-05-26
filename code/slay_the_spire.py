@@ -40,28 +40,32 @@ class Actions:
 
     def potion_position(n: int):
         """move the mouse to enemy position"""
-        helper.horizontal_position(755, 49, 85, n)
+        horizontal_position(755, 49, 85, n )
 
     def enemy_position(n: int):
         """move the mouse to enemy position"""
-        helper.horizontal_position(1100, 950, 100, n)
+        horizontal_position(1100, 900, 100, n)
 
     def reward_choose_a_card(n: int):
         """move the mouse to card 1-3 when choosing a card as reward"""
-        helper.horizontal_position(952, 827, 450, n)
+        horizontal_position(952, 827, 450, n)
 
     def choose_run_start_option(n: int):
         """move the mouse to one of the four start menu options"""
-        helper.vertical_position(1014, 405, 100, n)
+        vertical_position(1014, 405, 100, n)
 
     def spoils_1():
         """move the mouse to first item of the spoil screen"""
         ctrl.mouse(1261, 569) 
+
+    def confirmed_card():
+        """Move the mouse to the skip card"""
+        ctrl.mouse(1267, 805) 
     
     def proceed():
         """move the mouse to the proceed arrow after looting"""
         ctrl.mouse(2223, 1014) 
-        ctrl.mouse_click(button=0)
+        
 
     def select_area():
         """just clicks the mouse since I don't know how to do that in .talon"""
@@ -83,21 +87,21 @@ class Actions:
     
 
 #Helpers
-def horizontal_position(self, start_x_position, y_position, horiztonal_spacing, spaces):
-    ctrl.mouse((start_x_position) + (spaces * horiztonal_spacing), y_position)
+def horizontal_position(start_x_position, y_position, horiztonal_spacing, spaces):
+    ctrl.mouse((start_x_position - horiztonal_spacing) + (spaces * horiztonal_spacing), y_position)
 
-def vertical_position(self, start_y_position, x_position, vertical_spacing, spaces):
+def vertical_position( start_y_position, x_position, vertical_spacing, spaces):
     ctrl.mouse(x_position, (start_y_position - vertical_spacing) + (spaces * vertical_spacing))
 
 def generateSpaces(start_x, start_y, spacing, count, horiztonal):
     spaces = []
     for i in range(count):
         if horiztonal:    
-            x = (start_x) + (i * spacing)
+            x = (start_x - spacing) + (i * spacing)
             y = start_y
         else:
             x = start_x
-            y = start_y + (i * spacing)
+            y = (start_y - spacing) + (i * spacing)
         spaces.append((x, y))
 
     return spaces

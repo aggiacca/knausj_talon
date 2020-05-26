@@ -22,13 +22,16 @@ reward: user.spoils_1()
 choose card <number>: user.reward_choose_a_card(number)
 
 skip card: user.skip_position()
+confirm card: user.confirmed_card()
 
 proceed: 
     user.proceed()
     user.mouse_toggle_control_mouse()
+    user.hide_enemy_grid()
     
 select area:
     user.select_area()
     user.mouse_toggle_control_mouse()
+    user.show_enemy_grid()
 
 
