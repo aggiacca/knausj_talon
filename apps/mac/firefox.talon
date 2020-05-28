@@ -73,13 +73,6 @@ action(browser.submit_form):
 action(browser.toggle_dev_tools):
 	key(cmd-alt-i)
 
-#vimium
-link: key(f)
-new link: key(shift-f)
-
-# Make generic for chrome as well
-go to end tab: key(cmd-9)
-zoom reset: key(cmd-0)
 
 # requires settings in firefox 
 action(app.tab_previous):

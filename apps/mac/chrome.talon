@@ -71,8 +71,3 @@ action(browser.submit_form):
 
 action(browser.toggle_dev_tools):
 	key(cmd-alt-i)
-
-
-#vimium
-link: key(f)
-new link: key(shift-f)

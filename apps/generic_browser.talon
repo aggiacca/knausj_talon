@@ -22,6 +22,13 @@ show cache: browser.show_clear_cache()
 
 dev tools: browser.toggle_dev_tools()
 
+# personal vimium
+link: key(f)
+new link: key(shift-f)
+go to end tab: key(cmd-9)
+zoom reset: key(cmd-0)
+
+# 2shea's vimium
 #todo - port to apps
 # navigating current page
 # help: key(?)
