@@ -11,5 +11,9 @@ talon should wake:
     speech.enable()
 
 
-#dragon mode: speech.disable()
-#talon mode: speech.enable()
+^force see sharp$: user.code_set_language_mode("csharp")
+^force see plus plus$: user.code_set_language_mode("cplusplus")
+^force python$: user.code_set_language_mode("python")
+^force go language$: user.code_set_language_mode("go")
+^force (talon | talent) language$: user.code_set_language_mode("talon")
+^clear language modes$: user.code_clear_language_mode()
