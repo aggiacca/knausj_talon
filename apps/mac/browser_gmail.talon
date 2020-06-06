@@ -7,7 +7,12 @@ title: /Inbox/
 stupid test: key(?)
 
 # Compose and chat
-main window: key(shift-escape)
+main window: 
+    # workaround - I think vimium messes up the shift+escape keybinding
+    key(escape)
+    key(/)
+    key(escape)
+    
 next chat: key(ctrl-.)
 last chat: key(ctrl-,)
 
