@@ -2,7 +2,7 @@ tag: browser
 -
 (address bar | go address | go url): browser.focus_address()
 go home: browser.go_home()
-forward: browser.go_forward()
+go forward: browser.go_forward()
 go back[ward]: browser.go_back()
 
 go private: browser.open_private_window()
@@ -22,11 +22,23 @@ show cache: browser.show_clear_cache()
 
 dev tools: browser.toggle_dev_tools()
 
+#TODO: make these actions
+go to end tab: key(cmd-9)
+zoom reset: key(cmd-0)
+
 # personal vimium
 link: key(f)
 new link: key(shift-f)
-go to end tab: key(cmd-9)
-zoom reset: key(cmd-0)
+move tab [right]: key(> >)
+move tab left: key(< <)
+
+(dupe | duplicate) tab: key(y t)
+search tabs: key(T)
+
+(open | go) bookmark: key(b)
+(open | go) new bookmark: key(B)
+move to window: key(W)
+
 
 # 2shea's vimium
 #todo - port to apps
