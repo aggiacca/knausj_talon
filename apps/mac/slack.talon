@@ -1,10 +1,27 @@
 os: mac
 app: Slack
 -
-# Workspace
+
+
+
+    # Basics
+
+(slack | lack) [direct] messages: key(cmd-shift-k)
+
+
+(slack | lack) (find | search): key(cmd-f)
+
+(slack | lack) (history [next] | back | backward): key(cmd-[)
+(slack | lack) forward: key(cmd-])
+
+(slack | lack) threads: key(cmd-shift-t)
+toggle sidebar: key(cmd-shift-d)
+
+    # Workspace
 workspace <number>: key("cmd-{number}")
 previous workspace: key(cmd-shift-[)
 next workspace: key(cmd-shift-])
+
 # Channel
 channel: key(cmd-k)
 channel <phrase>: 
@@ -15,22 +32,21 @@ channel <phrase>:
 (slack | lack) [channel] info: key(cmd-shift-i)
 channel up: key(alt-up)
 channel down: key(alt-down)
+
     # Navigation
-(move | next) focus: key(ctrl-`)
 [next] (section | zone): key(f6)
 (previous | last) (section | zone): key(shift-f6)
-(slack | lack) [direct] messages: key(cmd-shift-k)
-(slack | lack) threads: key(cmd-shift-t)
-(slack | lack) (history [next] | back | backward): key(cmd-[)
-(slack | lack) forward: key(cmd-])
+
+
 [next] (element | bit): key(tab)
 (previous | last) (element | bit): key(shift-tab)
+
 (slack | lack) (my stuff | activity): key(cmd-shift-m)
 (slack | lack) directory: key(cmd-shift-e)
-(slack | lack) (starred [items] | stars): key(cmd-shift-s)
+(slack | lack) (starred [items] | stars | saved): key(cmd-shift-s)
 (slack | lack) unread [messages]: key(cmd-j)
 (go | undo | toggle) full: key(ctrl-cmd-f)
-(slack | lack) (find | search): key(cmd-f)
+
     # Messaging
 grab left: key(shift-up)
 grab right: key(shift-down)
@@ -53,13 +69,14 @@ bold: key(cmd-b)
 mark all read: key(shift-esc)
 mark channel read: key(esc)
 (clear | scrap | scratch): key(cmd-a backspace)
+    
     # Files and Snippets
 (slack | lack) upload: key(cmd-u)
 (slack | lack) snippet: key(cmd-shift-enter)
+    
     # Calls
 ([toggle] mute | unmute): key(m)
 (slack | lack) ([toggle] video): key(v)
 (slack | lack) invite: key(a)
     # Miscellaneous
 (slack | lack) shortcuts: key(cmd-/)
-emote <phrase>: "{phrase}"

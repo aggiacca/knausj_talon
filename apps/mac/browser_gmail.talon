@@ -9,10 +9,11 @@ stupid test: key(?)
 # Compose and chat
 main window: 
     # workaround - I think vimium messes up the shift+escape keybinding
+    # the issue is vimium reenables in the converstation windows
     key(escape)
     key(/)
     key(escape)
-    
+
 next chat: key(ctrl-.)
 last chat: key(ctrl-,)
 
