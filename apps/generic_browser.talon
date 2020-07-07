@@ -27,8 +27,8 @@ go to end tab: key(cmd-9)
 zoom reset: key(cmd-0)
 
 # personal vimium
-link: key(f)
-new link: key(shift-f)
+[open] link: key(f)
+[open] link new: key(shift-f)
 move tab [right]: key(> >)
 move tab left: key(< <)
 

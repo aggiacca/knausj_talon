@@ -1,14 +1,14 @@
-question [mark]: "?"
-(downscore | underscore): "_"
-double dash: "--"
+
 (bracket | brack | left bracket): "{"
 (rbrack | are bracket | right bracket): "}"
+
+# unique extras
+double dash: "--"
 triple quote: "'''"
 (dot dot | dotdot): ".."
 #ellipses: "…"
 ellipses: "..."
 (comma and | spamma): ", "
-plus: "+"
 arrow: "->"
 dub arrow: "=>"
 new line: "\\n"

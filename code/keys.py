@@ -86,7 +86,7 @@ ctx.lists['self.symbol'] = {
     'minus': '-', 'dash': '-',
     'equals': '=',
     'plus': '+',
-    'question mark': '?',
+    'question': '?',
     'tilde': '~',
     'bang': '!', 'exclamation point': '!', 
     'dollar': '$', 'dollar sign': '$',
