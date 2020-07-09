@@ -1,9 +1,6 @@
 os: mac
 app: Slack
 -
-
-
-
     # Basics
 
 (slack | lack) [direct] messages: key(cmd-shift-k)
@@ -75,8 +72,15 @@ mark channel read: key(esc)
 (slack | lack) snippet: key(cmd-shift-enter)
     
     # Calls
-([toggle] mute | unmute): key(m)
-(slack | lack) ([toggle] video): key(v)
+#([toggle] mute | unmute): key(m)
+#(slack | lack) ([toggle] video): key(v)
+
+action(user.toggle_mute):
+	key(m)
+
+action(user.toggle_video):
+	key(v)
+
 (slack | lack) invite: key(a)
     # Miscellaneous
 (slack | lack) shortcuts: key(cmd-/)

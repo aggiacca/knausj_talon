@@ -4,8 +4,6 @@ app: Google Chrome
 title: /Inbox/
 -
 
-stupid test: key(?)
-
 # Compose and chat
 main window: 
     # workaround - I think vimium messes up the shift+escape keybinding

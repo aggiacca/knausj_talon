@@ -6,7 +6,6 @@
 double dash: "--"
 triple quote: "'''"
 (dot dot | dotdot): ".."
-#ellipses: "…"
 ellipses: "..."
 (comma and | spamma): ", "
 arrow: "->"

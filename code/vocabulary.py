@@ -8,6 +8,7 @@ simple_vocabulary = [
     "VPN",
     "DNS",
     "minecraft",
+    "docker"
 ]
 
 mapping_vocabulary = {

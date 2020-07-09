@@ -1,3 +1,4 @@
+# General coding stuff
 slap:
 	edit.line_end()
 	key(enter)
@@ -50,18 +51,18 @@ block:
 string U T F eight: 
 	insert("'utf8'")
 state past: "pass"
+
+# General commands
 zoom [in]: edit.zoom_in()
 zoom out: edit.zoom_out()
 (page | scroll) up: key(pgup)
 (page | scroll) [down]: key(pgdown)
 copy that: edit.copy()
 cut that: edit.cut()
-# paste that hasn't worked very well for me. trying paste it instead
-#paste that: edit.paste()
+# 'paste that' hasn't worked very well for me. trying paste it instead
 paste it: edit.paste()
 paste match: edit.paste_match_style()
 file save: edit.save()
-#menu help: key(F1)
 #spotlight: key(super)
 undo that: edit.undo()
 redo that: edit.redo()
@@ -70,12 +71,11 @@ volume down: key(voldown)
 mute: key(mute)
 play next: key(next)
 play previous: key(prev)
+# doesn't work right now
 #(play | pause): key(play_pause)  
-wipe: key(backspace)
 (pad | padding): 
 	insert("  ") 
 	key(left)
-funny: "ha ha"
-#menu: key(alt)
+funny: "haha"
 
 
