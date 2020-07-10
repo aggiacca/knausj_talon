@@ -1,5 +1,4 @@
-os: mac
-# TODO: Make this use tag so its cross platform and more context sensitive
+tag: voice_chat
 -
 
 toggle (mute | microphone):

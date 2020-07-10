@@ -1,6 +1,9 @@
 os: mac
 app: Slack
 -
+tag(): voice_chat
+
+
     # Basics
 
 (slack | lack) [direct] messages: key(cmd-shift-k)

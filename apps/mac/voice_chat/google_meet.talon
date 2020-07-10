@@ -2,6 +2,8 @@ os: mac
 app: Google Chrome
 title: /Meet -/
 -
+tag(): voice_chat
+
 action(user.toggle_mute):
 	key(cmd-d)
 

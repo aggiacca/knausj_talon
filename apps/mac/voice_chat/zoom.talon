@@ -3,6 +3,8 @@ app: Zoom
 app: zoom
 app: zoom.us
 -
+tag(): voice_chat
+
 action(user.toggle_mute):
 	key(shift-cmd-a)
 
