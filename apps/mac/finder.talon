@@ -12,8 +12,11 @@ action(user.file_manager_go_forward):
 action(user.file_manager_go_back):
     key("cmd-[")
 
-# Command–Down Arrow: Open the selected item.
-open item: key(cmd-down)
+action(user.file_manager_open_item):
+    key(cmd-down)
 
-#Command-Delete: Move the selected item to the Trash.
-trash item: key(cmd-backspace)
+action(user.file_manager_trash_item):
+    key(cmd-backspace)
+
+action(user.file_manager_open_in_default_editor):
+    key(ctrl-shift-cmd-8)

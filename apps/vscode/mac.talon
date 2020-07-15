@@ -7,6 +7,7 @@ os: mac
 tag(): tabs
 tag(): ide
 tag(): line_commands
+
 # General
 action(user.ide_command_palette):
   key(cmd-shift-p)
@@ -14,12 +15,17 @@ action(edit.indent_less):
   key(cmd-[)
 action(edit.indent_more):
   key(cmd-])
+
+# workbench.action.nextEditorInGroup
 action(app.tab_next):
   key(cmd-k)
-  key(alt-cmd-right)
+  key(alt-cmd-k)
+  
+# workbench.action.previousEditorInGroup
 action(app.tab_previous):
   key(cmd-k)
-  key(alt-cmd-left)
+  key(alt-cmd-j)
+
 # Toggleable views
 action(user.ide_toggle_fullscreen): 
   user.ide_command_palette()
@@ -277,3 +283,4 @@ action(user.ide_go_seventh_tab): key(ctrl-7)
 action(user.ide_go_eighth_tab): key(ctrl-8)
 action(user.ide_go_ninth_tab): key(ctrl-9)
 action(user.ide_clear_tab): key(cmd-w)
+action(user.ide_close_other_tabs): key(alt-cmd-t)

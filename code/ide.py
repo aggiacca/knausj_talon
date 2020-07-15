@@ -469,6 +469,9 @@ class Actions:
     def ide_clear_tab():
         """Close current open view"""
 
+    def ide_close_other_tabs():
+        """Close other tabs"""
+
     def ide_change_scheme():
         """Trigger scheme menu (e.g. to change colour scheme)"""
 

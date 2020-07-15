@@ -103,7 +103,15 @@ def file_manager_file_index(m) -> int:
 class Actions:
     def file_manager_open_parent():
         """file_manager_open_parent"""
-        return
+        
+    def file_manager_open_item():
+        """Open the selected file or folder"""
+    
+    def file_manager_trash_item():
+        """Trash the selected file or folder"""
+
+    def file_manager_open_in_default_editor():
+        """Open file in default text editor"""
 
     def file_manager_go_forward():
         """file_manager_go_forward_directory"""
@@ -300,13 +308,24 @@ class Actions:
                 actions.key("cmd-i")
             #else:
 
-    def file_manager_terminal_here():
-        """Opens terminal at current location"""
+    def file_manager_terminal_window_here():
+        """Opens terminal window at current location"""
         if not is_terminal:
             if is_windows:  
                 actions.key("ctrl-l")
                 actions.insert("cmd.exe")
                 actions.key("enter")
+            elif is_mac:
+                # system preferences -> keyboard -> shortcuts -> iTerm2
+                actions.key("shift-cmd-2")
+                
+    def file_manager_terminal_tab_here():
+        """Opens terminal tab at current location"""
+        if not is_terminal:
+            if is_mac:
+                # system preferences -> keyboard -> shortcuts -> iTerm2
+                actions.key("shift-cmd-1")
+                
 
 pattern = re.compile(r"[A-Z][a-z]*|[a-z]+|\d")
 def create_spoken_forms(symbols, max_len=10):

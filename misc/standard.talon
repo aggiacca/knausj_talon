@@ -28,7 +28,6 @@ word streak:
 	key(left)
 word printf: "printf"
 word shell: "shell"
-dunder in it: "__init__"
 args: 
 	insert("()")
 	key(left)
@@ -63,7 +62,7 @@ cut that: edit.cut()
 paste it: edit.paste()
 paste match: edit.paste_match_style()
 file save: edit.save()
-#spotlight: key(super)
+spotlight: key(cmd-space)
 undo that: edit.undo()
 redo that: edit.redo()
 volume up: key(volup)

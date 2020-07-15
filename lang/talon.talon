@@ -26,6 +26,7 @@ key:
 action:
 	insert("action():")
 	edit.left()
+	edit.left()
 os win:
 	insert("os: windows")
 os mac:

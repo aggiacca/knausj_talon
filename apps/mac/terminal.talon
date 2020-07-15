@@ -5,6 +5,8 @@ app: com.apple.Terminal
 -
 tag(): terminal
 tag(): file_manager
+tag(): tabs
+
 action(user.file_manager_open_parent):
     insert("cd ..")
     key(enter)
@@ -33,7 +35,9 @@ suspend:
 resume:
   insert("fg")
   key(enter)
-
+kill all:
+  key(ctrl-c)
+  
 node start:
   insert("npm run start")
 node install:

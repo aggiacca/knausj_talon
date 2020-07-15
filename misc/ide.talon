@@ -180,6 +180,7 @@ go eighth tab: user.ide_go_eighth_tab()
 go ninth tab: user.ide_go_ninth_tab()
 go final tab: user.ide_go_final_tab()
 clear tab: user.ide_clear_tab()
+clear others: user.ide_close_other_tabs()
 # Quick popups
 change scheme: user.ide_change_scheme()
 (toggle | pop) (doc | documentation): user.ide_toggle_documentation()
