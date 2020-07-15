@@ -33,7 +33,7 @@ class Actions:
         else:
             raise Exception("1,2,3 are the only options")
 
-    def chest_position():
+    def reward_chest_position():
         """move the mouse to the chest reward position"""
         ctrl.mouse(1716, 886)
 
