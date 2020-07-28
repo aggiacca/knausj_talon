@@ -1,99 +1,153 @@
-from talon import app, Module, Context, actions, ui
-from talon.voice import Capture
+import os
 import re
 import time
-import os
-import platform
 
-### Using old version because the new version doesn't work
+from talon import Context, Module, app, imgui, ui
+from talon.voice import Capture
+
+# Construct at startup a list of overides for application names (similar to how homophone list is managed)
+# ie for a given talon recognition word set  `one note`, recognized this in these switcher functions as `ONENOTE`
+# the list is a comma seperated `<Recognized Words>, <Overide>`
+# TODO: Consider put list csv's (homophones.csv, app_name_overrides.csv) files together in a seperate directory,`knausj_talon/lists`
+cwd = os.path.dirname(os.path.realpath(__file__))
+overrides_file = os.path.join(
+    cwd, "app_names", f"app_name_overrides.{app.platform}.csv"
+)
+overrides = {}
+with open(overrides_file, "r") as f:
+    for line in f:
+        line = line.rstrip()
+        line = line.split(",")
+        overrides[line[0].lower()] = line[1].strip()
+
+print(f"knausj_talon.switcher------------ app name overrides:{overrides}")
 
 app_cache = {}
-overrides = {'code': 'VSCode', 'grip': 'DataGrip', 'term': 'iTerm2'}
+
 
 mod = Module()
-mod.list('running', desc='all running applications')
-mod.list('launch', desc='all launchable applications')
+mod.list("running", desc="all running applications")
+mod.list("launch", desc="all launchable applications")
+
 
 @mod.capture
 def running_applications(m) -> str:
     "Returns a single application name"
-    
+
+
 @mod.capture
 def launch_applications(m) -> Capture:
     "Returns a single application name"
 
+
 ctx = Context()
-@ctx.capture(rule='{self.running}')
+
+
+@ctx.capture(rule="{self.running}")
 def running_applications(m):
-    return m._words[-1]
-    
-@ctx.capture(rule='{self.launch}')
+    return m.running
+
+
+@ctx.capture(rule="{self.launch}")
 def launch_applications(m):
-    return m
-    
+    return m.launch
+
+
 def split_camel(word):
-    return re.findall(r'[0-9A-Z]*[a-z]+(?=[A-Z]|$)', word)
+    return re.findall(r"[0-9A-Z]*[a-z]+(?=[A-Z]|$)", word)
+
 
 def get_words(name):
-    words = re.findall(r'[0-9A-Za-z]+', name)
+    words = re.findall(r"[0-9A-Za-z]+", name)
     out = []
     for word in words:
         out += split_camel(word)
     return out
 
+
 @mod.action_class
 class Actions:
     def switcher_focus(name: str):
         """Focus a new application by  name"""
-        full = ctx.lists['self.running'].get(name)
-        if not full:
+        running = ctx.lists["self.running"]
+        wanted_app = None
+        
+        for running_name in running.keys():
+            if running_name == name or running_name.lower().startswith(name.lower()):
+                wanted_app = running[running_name]
+                break
+        if wanted_app is None:
             return
-        for app in ui.apps():
-            if app.name == full and not app.background:
-                app.focus()
+        
+        for cur_app in ui.apps():
+            if cur_app.name == wanted_app and not cur_app.background:
+                cur_app.focus()
                 break
 
     def switcher_launch(path: str):
         """Launch a new application by path"""
         ui.launch(path=path)
 
+    def switcher_list_running():
+        """Lists all running applications"""
+        gui.show()
+
+    def switcher_hide_running():
+        """Hides list of running applications"""
+        gui.hide()
+
+
+@imgui.open(software=False)
+def gui(gui: imgui.GUI):
+    gui.text("Names of running applications")
+    gui.line()
+    for line in ctx.lists["self.running"]:
+        gui.text(line)
+
+
 def update_lists():
-    new = {}
+    running = {}
+    launch = {}
+
     for cur_app in ui.apps(background=False):
         name = cur_app.name
-        if name.endswith('.exe'):
-            name = name.rsplit('.', 1)[0]
+        if name.endswith(".exe"):
+            name = name.rsplit(".", 1)[0]
         words = get_words(name)
         for word in words:
-            if word and not word in new:
-                new[word] = cur_app.name
-        new[name] = cur_app.name
+            if word and word not in running:
+                running[word.lower()] = cur_app.name
+        running[name.lower()] = cur_app.name
     for override in overrides:
-        new[override] = overrides[override]
-        
-    ctx.lists['self.running'] = new
-    
-    #print(str(new))
-    new = {}
-    
+        running[override] = overrides[override]
+
     if app.platform == "mac":
-        for base in '/Applications', '/Applications/Utilities':
+        for base in "/Applications", "/Applications/Utilities":
             for name in os.listdir(base):
                 path = os.path.join(base, name)
-                name = name.rsplit('.', 1)[0].lower()
-                new[name] = path
-                words = name.split(' ')
+                name = name.rsplit(".", 1)[0].lower()
+                launch[name] = path
+                words = name.split(" ")
                 for word in words:
-                    if word and word not in new:
+                    if word and word not in launch:
                         if len(name) > 6 and len(word) < 3:
                             continue
-                        new[word] = path
-    
-        ctx.lists['self.launch'] = new
+                        launch[word] = path
+
+    lists = {
+        "self.running": running,
+        "self.launch": launch,
+    }
+
+    # batch update lists
+    ctx.lists.update(lists)
+
 
 def ui_event(event, arg):
-    if event in ('app_activate', 'app_launch', 'app_close', 'win_open', 'win_close'):
+    if event in ("app_activate", "app_launch", "app_close", "win_open", "win_close"):
+        # print(f'------------------ event:{event}  arg:{arg}')
         update_lists()
 
-ui.register('', ui_event)
+
+ui.register("", ui_event)
 update_lists()
