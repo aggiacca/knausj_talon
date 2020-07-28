@@ -72,6 +72,13 @@ play next: key(next)
 play previous: key(prev)
 # doesn't work right now
 #(play | pause): key(play_pause)  
+# crappy work around
+global (play | pause): 
+	user.switcher_focus("Spotify")
+	sleep(1000ms)
+	key(space)
+
+
 (pad | padding): 
 	insert("  ") 
 	key(left)

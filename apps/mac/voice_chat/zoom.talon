@@ -14,6 +14,6 @@ action(user.toggle_video):
 action(user.toggle_screen_share):
 	key(shift-cmd-s)
 
-start meeting: key(ctrl-cmd-v)
+(new | start meeting): key(ctrl-cmd-v)
 show chat: key(shift-cmd-h)
 show participants: key(cmd-u)

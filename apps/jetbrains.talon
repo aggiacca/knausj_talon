@@ -217,6 +217,8 @@ action(user.ide_toggle_parameters): user.idea("action ToggleInlineHintsAction")
 action(user.ide_toggle_fullscreen): user.idea("action ToggleFullScreen")
 action(user.ide_toggle_distraction_free): user.idea("action ToggleDistractionFreeMode")
 action(user.ide_toggle_presentation_mode): user.idea("action TogglePresentationMode")
+# Toggle additionals
+action(user.ide_toggle_comment): key(cmd-/)
 # Tabs
 action(user.ide_go_first_tab): user.idea("action GoToTab1")
 action(user.ide_go_second_tab): user.idea("action GoToTab2")
