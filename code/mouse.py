@@ -87,6 +87,7 @@ ctx.lists["self.mouse_button"] = {
     "rickle": "1",
     # left click
     "chiff": "0",
+    "cliff": "0",
     #middle click,
     'middle': '2'
 }

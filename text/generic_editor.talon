@@ -111,7 +111,7 @@ clear down:
     edit.extend_line_down()
     edit.delete()
 
-clear word left:
+clear word [left]:
     edit.extend_word_left()
     edit.delete()
 

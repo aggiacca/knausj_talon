@@ -64,6 +64,12 @@ service tool:
   insert("service-tool -v")
 
 
+# TODO: Do the below for all of them
+#project builder: insert("web-builder")
+#go project builder:
+#  insert("cd ~/Documents/GitRepos/web-builder")
+#  key(enter)
+
 project talon:
   insert("cd ~/.talon/user/knausj_talon")
   key(enter)
