@@ -5,6 +5,10 @@ close window: app.window_close()
 focus <user.running_applications>: user.switcher_focus(running_applications)
 list running: user.switcher_list_running()
 hide running: user.switcher_hide_running()
+launch <user.launch_applications>: user.switcher_launch(launch_applications)
+
+
+# my additions
 fullscreen window: user.window_fullscreen()
 
 # TODO: make all below an action so it works on windows too generically
