@@ -41,11 +41,11 @@ key(keypad_2):
 #dragon mode: speech.disable()
 #talon mode: speech.enable()
 
-^dictation mode$:
+^mode dictation$:
     mode.disable("sleep")
     mode.disable("command")
     mode.enable("dictation")
-^command mode$:
+^mode command$:
     mode.disable("sleep")
     mode.disable("dictation")
     mode.enable("command")

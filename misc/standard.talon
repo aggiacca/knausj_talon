@@ -7,7 +7,7 @@ grep: "grep "
 elle less: "ls "
 run L S: "ls\n"
 run (S S H | S H): "ssh"
-diff: "diff "
+#diff: "diff "
 dot pie: ".py"
 run vim: "vim "
 run make: "make\n"
@@ -69,16 +69,8 @@ volume up: key(volup)
 volume down: key(voldown)
 mute: key(mute)
 play next: key(next)
-play previous: key(prev)
-# doesn't work right now
-#(play | pause): key(play_pause)  
-# crappy work around
-global (play | pause): 
-	user.switcher_focus("Spotify")
-	sleep(1000ms)
-	key(space)
-
-
+play previous: key(prev)		
+(play | pause): key(play)  
 (pad | padding): 
 	insert("  ") 
 	key(left)

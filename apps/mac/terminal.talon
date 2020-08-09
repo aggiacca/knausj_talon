@@ -40,11 +40,12 @@ kill all:
   
 node start:  insert("npm run start")
 node install: insert("npm install")
-node storybook: insert("npm run storybook")
 node build: insert("npm run build")
 node link: insert("npm link")
 node clean: insert("npm run clean")
+node storybook: insert("npm run storybook")
 node link runtime: insert("npm link @ruist/cxr")
+node code (gen | generation): insert('npm run code-gen')
 clean modules:
     insert("rm -rf node_modules")
     key(enter)

@@ -8,8 +8,8 @@
 <user.format_text>$: insert(format_text)
 <user.format_text> over: insert(format_text)
 word <user.word>: insert(user.word)
-list formatters: user.list_formatters()
-hide formatters: user.hide_formatters()
+formatters list: user.list_formatters()
+formatters hide: user.hide_formatters()
 ^nope that$: user.clear_last_phrase()
 ^nope that was <user.formatters>$:
   user.clear_last_phrase()

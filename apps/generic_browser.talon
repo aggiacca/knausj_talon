@@ -29,15 +29,15 @@ zoom reset: key(cmd-0)
 # personal vimium
 [open] link: key(f)
 [open] link new: key(shift-f)
-move tab [right]: key(> >)
-move tab left: key(< <)
+tab move [right]: key(> >)
+tab move left: key(< <)
 
-(dupe | duplicate) tab: key(y t)
-search tabs: key(T)
+tab (dupe | duplicate): key(y t)
+(tabs | tab) search: key(T)
 
-(open | go) bookmark: key(b)
-(open | go) new bookmark: key(B)
-move to window: key(W)
+bookmark open: key(b)
+bookmark open new: key(B)
+tab to window: key(W)
 
 
 # 2shea's vimium

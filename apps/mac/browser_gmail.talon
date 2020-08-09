@@ -12,8 +12,8 @@ main window:
     key(/)
     key(escape)
 
-next chat: key(ctrl-.)
-last chat: key(ctrl-,)
+chat next: key(ctrl-.)
+chat last: key(ctrl-,)
 
 search mail: key(/)
 
@@ -23,8 +23,8 @@ search mail: key(/)
 
 # Navigation
 #main list: key(u)
-next section: key(`)
-last section: key(~)
+section next: key(`)
+section last: key(~)
 
 # Hang outs
 conversation list: key(h c)

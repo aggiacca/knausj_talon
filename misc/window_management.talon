@@ -9,14 +9,14 @@ launch <user.launch_applications>: user.switcher_launch(launch_applications)
 
 
 # my additions
-fullscreen window: user.window_fullscreen()
+window fullscreen: user.window_fullscreen()
 
 # TODO: make all below an action so it works on windows too generically
-lock screen: key(cmd-ctrl-q)
+screen lock: key(cmd-ctrl-q)
 force quit: key(cmd-alt-escape)
 
 # system preferences -> keyboard -> short cuts
-show desktop: key(f11)
+desktop show: key(f11)
 desktop one: key(ctrl-1)
 desktop two: key(ctrl-2)
 desktop three: key(ctrl-3)
