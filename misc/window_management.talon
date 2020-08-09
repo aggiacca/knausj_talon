@@ -1,10 +1,10 @@
-new window: app.window_open()
-last window: app.window_next()
-next window: app.window_previous()
-close window: app.window_close()
+window (new|open): app.window_open()
+window next: app.window_next()
+window last: app.window_previous()
+window close: app.window_close()
 focus <user.running_applications>: user.switcher_focus(running_applications)
-list running: user.switcher_list_running()
-hide running: user.switcher_hide_running()
+running list: user.switcher_list_running()
+running hide: user.switcher_hide_running()
 launch <user.launch_applications>: user.switcher_launch(launch_applications)
 
 
