@@ -38,20 +38,13 @@ resume:
 kill all:
   key(ctrl-c)
   
-node start:
-  insert("npm run start")
-node install:
-  insert("npm install")
-node storybook:
-  insert("npm run storybook")
-node build:
-  insert("npm run build")
-node link:
-  insert("npm link")
-node clean:
-  insert("npm run clean")
-node link runtime:
-  insert("npm link @ruist/cxr")
+node start:  insert("npm run start")
+node install: insert("npm install")
+node storybook: insert("npm run storybook")
+node build: insert("npm run build")
+node link: insert("npm link")
+node clean: insert("npm run clean")
+node link runtime: insert("npm link @ruist/cxr")
 clean modules:
     insert("rm -rf node_modules")
     key(enter)
@@ -78,82 +71,102 @@ project directory:
   insert("cd ~/Documents/GitRepos")
   key(enter)
 
-project builder:
+project builder: insert("web-builder")
+go project builder:
   insert("cd ~/Documents/GitRepos/web-builder")
   key(enter)
   
-project runtime:
+project runtime: insert('node-cxr')
+go project runtime:
   insert("cd ~/Documents/GitRepos/node-cxr")
   key(enter)
-  
-project gateway:
+
+project gateway: insert('node-session-gateway')
+go project gateway:
   insert("cd ~/Documents/GitRepos/node-session-gateway")
   key(enter)
 
-project collections:
+project collections: insert('api-collections')
+go project collections:
   insert("cd ~/Documents/GitRepos/api-collections")
   key(enter)
 
-project integration:
+project integration: insert('integration-testing')
+go project integration:
   insert("cd ~/Documents/GitRepos/integration-testing")
   key(enter)
 
-project object service:
+project object service: insert('object-service')
+go project object service:
   insert("cd ~/Documents/GitRepos/object-service")
   key(enter)
 
-project public:
+project public: insert('publicapi')
+go project public:
   insert("cd ~/Documents/GitRepos/publicapi")
   key(enter)
 
-project service tool:
+project service tool: insert('pypi-service-tool')
+go project service tool:
   insert("cd ~/Documents/GitRepos/pypi-service-tool")
   key(enter)
 
-project utilities:
+project utilities: insert('pypi-utilities')
+go project utilities:
   insert("cd ~/Documents/GitRepos/pypi-utilities")
   key(enter)
 
-project cert processing:
+project cert processing: insert('ru-acme-processing')
+go project cert processing:
   insert("cd ~/Documents/GitRepos/ru-acme-processing")
   key(enter)
 
-project postprocessing:
+project postprocessing: insert('ru-assets-postprocessing')
+go project postprocessing:
   insert("cd ~/Documents/GitRepos/ru-assets-postprocessing")
   key(enter)
 
-project json store:
+project json store: insert('ru-json-store')
+go project json store:
   insert("cd ~/Documents/GitRepos/ru-json-store")
   key(enter)
 
-project local service:
+project local service: insert('ru-local-service')
+go project local service:
   insert("cd ~/Documents/GitRepos/ru-local-service")
   key(enter)
 
-project saml:
+project saml: insert('ru-saml')
+go project saml:
   insert("cd ~/Documents/GitRepos/ru-saml")
   key(enter)
 
-project service:
+project service: insert('ru-service')
+go project service:
   insert("cd ~/Documents/GitRepos/ru-service")
   key(enter)
 
-project session manager:
+project session manager: insert('ru-session-manager')
+go project session manager:
   insert("cd ~/Documents/GitRepos/ru-session-manager")
   key(enter)
 
-project system:
+project system: insert('ru-system')
+go project system:
   insert("cd ~/Documents/GitRepos/ru-system")
   key(enter)
 
-project reporting:
+project reporting: insert('reporting')
+go project reporting:
   insert("cd ~/Documents/GitRepos/reporting")
   key(enter)
 
-project sales force:
+project sales force: insert('salesforce-subscription')
+go project sales force:
   insert("cd ~/Documents/GitRepos/salesforce-subscription")
   key(enter)
 
-project infra:
+project infra: insert('infra-ingress')
+go project infra:
   insert("cd ~/Documents/GitRepos/infra-ingress")
   key(enter)
