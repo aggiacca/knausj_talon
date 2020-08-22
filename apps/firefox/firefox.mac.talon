@@ -84,4 +84,4 @@ action(app.tab_next):
 # using this instead of vimium for two reasons. 
 # 1. this will work in tabs that vimium is disabled (like gmail)
 # 2. this will work even when the cursor is selected in a text input (like evernote)
-recent tab: key(ctrl-tab)
+tab recent: key(ctrl-tab)
