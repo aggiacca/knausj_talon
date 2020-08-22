@@ -6,13 +6,29 @@ settings():
 	#hide cursor when mouse_wake is called to enable zoom mouse
 	user.mouse_wake_hides_cursor = 0
 mouse control: user.mouse_toggle_control_mouse()
-mouse zoom: user.mouse_toggle_zoom_mouse()
-mouse [camera] overlay: eye_mouse.camera_overlay.toggle()
-mouse calibration: user.mouse_calibrate()	
-<user.mouse_index>: mouse_click(mouse_index)
-<user.modifiers> <user.mouse_index>: 
+zoom mouse: user.mouse_toggle_zoom_mouse()
+camera overlay: eye_mouse.camera_overlay.toggle()
+run calibration: user.mouse_calibrate()	
+touch: mouse_click(0)
+cliff: mouse_click(0)
+righty: mouse_click(1)
+rickle: mouse_click(1)
+middle: mouse_click(2)
+
+#see keys.py for modifiers.
+#defaults
+#command
+#control
+#option = alt
+#shift
+#super = windows key
+<user.modifiers> touch: 
 	key("{modifiers}:down")
-	mouse_click(mouse_index)
+	mouse_click(0)
+	key("{modifiers}:up")
+<user.modifiers> righty: 
+	key("{modifiers}:down")
+	mouse_click(1)
 	key("{modifiers}:up")
 (dubclick | duke): 
 	mouse_click()

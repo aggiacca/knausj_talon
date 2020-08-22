@@ -1,5 +1,5 @@
 os: mac
-app: Slack
+app: slack
 -
 tag(): voice_chat
 

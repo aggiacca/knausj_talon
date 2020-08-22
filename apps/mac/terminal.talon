@@ -1,11 +1,8 @@
-os: mac
-app: Terminal
-app: iTerm2
-app: com.apple.Terminal
+app: apple_terminal
+app: i_term_2
 -
-tag(): terminal
-tag(): file_manager
-tag(): tabs
+tag(): user.terminal
+tag(): user.file_manager
 
 action(user.file_manager_open_parent):
     insert("cd ..")

@@ -32,7 +32,7 @@ action(edit.extend_down):
 	key(shift-down)
 	
 action(edit.extend_file_end):
-	key(shift-cmd-down)
+	key(cmd-shift-down)
 	
 action(edit.extend_file_start):
 	key(cmd-shift-up)
