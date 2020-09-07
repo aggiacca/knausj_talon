@@ -36,7 +36,7 @@ def launch_applications(m) -> str:
     "Returns a single application name"
 
 
-@ctx.capture(rule="({self.running} | <user.text>)")
+@ctx.capture(rule="{self.running}")  # | <user.text>)")
 def running_applications(m):
     try:
         return m.running
@@ -175,9 +175,12 @@ class Actions:
         """Launch a new application by path"""
         ui.launch(path=path)
 
-    def switcher_list_running():
-        """Lists all running applications"""
-        gui.show()
+    def switcher_toggle_running():
+        """Shows/hides all running applications"""
+        if gui.showing:
+            gui.hide()
+        else:
+            gui.show()
 
     def switcher_hide_running():
         """Hides list of running applications"""

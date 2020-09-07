@@ -1,4 +1,4 @@
-from talon import Module, Context
+from talon import Context, Module
 
 mod = Module()
 
@@ -56,8 +56,7 @@ and app.name: signal
 
 apps.termite = """
 os: linux
-app.name: /termite/
-not win.title: /VIM/
+and app.name: /termite/
 """
 
 apps.windows_explorer = """
@@ -78,4 +77,3 @@ apps.windows_terminal = """
 os: windows
 and app.name: WindowsTerminal.exe 
 """
-
