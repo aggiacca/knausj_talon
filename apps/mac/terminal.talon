@@ -3,6 +3,7 @@ app: i_term_2
 -
 tag(): user.terminal
 tag(): user.file_manager
+tag(): user.tabs
 
 action(user.file_manager_open_parent):
     insert("cd ..")

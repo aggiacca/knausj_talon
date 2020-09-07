@@ -22,7 +22,7 @@ middle: mouse_click(2)
 #option = alt
 #shift
 #super = windows key
-<user.modifiers> touch: 
+<user.modifiers> cliff: 
 	key("{modifiers}:down")
 	mouse_click(0)
 	key("{modifiers}:up")
