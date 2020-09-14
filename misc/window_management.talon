@@ -22,3 +22,4 @@ desktop three: key(ctrl-3)
 
 system menu bar: key(ctrl-f2)
 system dock: key(ctrl-f3)
+spotlight: key(cmd-space)
