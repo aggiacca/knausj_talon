@@ -88,11 +88,11 @@ if app.platform == "windows":
 
     nameBuffer = ctypes.create_unicode_buffer(size.contents.value)
     GetUserNameEx(NameDisplay, nameBuffer, size)
+    one_drive_path = os.path.expanduser(os.path.join("~", "OneDrive"))
 
     # this is probably not the correct way to check for onedrive, quick and dirty
     if os.path.isdir(os.path.expanduser(os.path.join("~", r"OneDrive\Desktop"))):
         default_folder = os.path.join("~", "Desktop")
-        one_drive_path = os.path.expanduser(os.path.join("~", "OneDrive"))
 
         ctx.lists["user.file_manager_directory_remap"] = {
             "Desktop": os.path.join(one_drive_path, "Desktop"),
@@ -304,7 +304,7 @@ class Actions:
         if isinstance(path, int):
             index = (current_folder_page - 1) * len(selection_numbers) + path
             if index < len(folder_selections):
-                actions.insert(folder_selections[index])
+                actions.insert('"{}"'.format(folder_selections[index]))
         else:
             actions.insert(path)
 
@@ -392,16 +392,21 @@ class Actions:
                 actions.insert("cmd.exe")
                 actions.key("enter")
             elif is_mac:
-                # system preferences -> keyboard -> shortcuts -> iTerm2
-                actions.key("shift-cmd-2")
-                
-    def file_manager_terminal_tab_here():
-        """Opens terminal tab at current location"""
-        if not is_terminal:
-            if is_mac:
-                # system preferences -> keyboard -> shortcuts -> iTerm2
-                actions.key("shift-cmd-1")
-                
+                from talon import applescript
+
+                applescript.run(
+                    r"""
+                tell application "Finder"
+                    set myWin to window 1
+                    set thePath to (quoted form of POSIX path of (target of myWin as alias))
+                    tell application "Terminal"
+                        activate
+                        tell window 1
+                            do script "cd " & thePath
+                        end tell
+                    end tell
+                end tell"""
+                )
 
 
 pattern = re.compile(r"[A-Z][a-z]*|[a-z]+|\d")
