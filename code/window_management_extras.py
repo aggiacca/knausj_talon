@@ -1,5 +1,4 @@
-from talon import app, Module, Context, actions, ui,imgui, applescript
-from talon.voice import Capture
+from talon import app, Module, Context, actions, ui,imgui
 import re
 import time
 import os
