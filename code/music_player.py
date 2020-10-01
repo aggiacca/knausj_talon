@@ -1,11 +1,7 @@
-from talon import app, Module, Context, actions, ui,imgui
-from talon.voice import Capture
-import re
-import time
-import os
-import platform
+from talon import app, Module, Context, actions
 
 mod = Module()
+mod.tag("music_player", desc="Tag for enabling generic music player commands")
 
 @mod.action_class
 class Actions:

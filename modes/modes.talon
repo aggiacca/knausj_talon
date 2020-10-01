@@ -2,7 +2,7 @@
 mode: all
 -
     
-talon sleep: 
+(talon | talent) sleep: 
     user.show_sleep_notification()
     speech.disable()
     

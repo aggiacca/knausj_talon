@@ -1,7 +1,7 @@
 os: mac
 app: slack
 -
-tag(): voice_chat
+tag(): user.voice_chat
 
 
     # Basics

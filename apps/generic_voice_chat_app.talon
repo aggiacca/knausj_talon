@@ -1,4 +1,4 @@
-tag: voice_chat
+tag: user.voice_chat
 -
 
 toggle (mute | microphone):

@@ -1,10 +1,8 @@
 from talon import app, Module, Context, actions, ui,imgui
-import re
-import time
-import os
-import platform
 
 mod = Module()
+mod.tag("voice_chat", desc="Tag for enabling voice chat commands")
+
 
 @mod.action_class
 class Actions:

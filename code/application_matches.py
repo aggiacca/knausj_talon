@@ -5,6 +5,22 @@ mod = Module()
 
 apps = mod.apps
 
+# shared
+apps.spotify = """
+os: mac
+and app.bundle: com.spotify.client
+"""
+
+apps.zoom = """
+os: mac
+and app.bundle: us.zoom.xos
+"""
+
+apps.discord = """
+os: mac
+and app.bundle: com.hnc.Discord
+"""
+
 # apple specific apps
 apps.datagrip = """
 os: mac
@@ -59,6 +75,7 @@ os: linux
 and app.name: /termite/
 """
 
+# windows specific apps
 apps.windows_explorer = """
 os: windows
 and app.name: Windows Explorer

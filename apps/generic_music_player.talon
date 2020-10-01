@@ -1,4 +1,4 @@
-tag: music_player
+tag: user.music_player
 -
 
 (seek [forward] | jump): user.seek_forward()

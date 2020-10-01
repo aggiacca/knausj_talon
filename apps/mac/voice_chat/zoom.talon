@@ -1,9 +1,7 @@
 os: mac
-app: Zoom
 app: zoom
-app: zoom.us
 -
-tag(): voice_chat
+tag(): user.voice_chat
 
 action(user.toggle_mute):
 	key(shift-cmd-a)

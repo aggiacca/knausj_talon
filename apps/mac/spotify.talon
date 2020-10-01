@@ -1,7 +1,7 @@
 os: mac
 app: Spotify
 -
-tag(): music_player
+tag(): user.music_player
 
 action(user.seek_forward):
 	key(shift-cmd-right)
