@@ -21,7 +21,10 @@ key(keypad_2):
     user.show_sleep_notification()
     speech.disable()
     user.toggle_mute()
-    
+
+key(keypad_0): 
+    user.mouse_toggle_control_mouse()
+
 
 
 #welcome back:
