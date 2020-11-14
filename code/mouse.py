@@ -244,8 +244,8 @@ def show_cursor_helper(show):
 
 
 def on_pop(active):
-    # print("hello")
-    # ctrl.key_press("a")
+    print("you popped")
+
     if gaze_job or scroll_job:
         if setting_mouse_enable_pop_stops_scroll.get() >= 1:
             stop_scroll()
@@ -260,9 +260,12 @@ def on_pop(active):
 
 
 noise.register("pop", on_pop)
-# noise.register("hiss_start", on_pop)
-# noise.register("hiss_end", on_pop)
 
+# def on_hiss(active):
+#     print("hiss", active)
+# noise.register("hiss", on_hiss)
+# noise.register("hiss_start", on_hiss)
+# noise.register("hiss_end", on_hiss)
 
 
 
