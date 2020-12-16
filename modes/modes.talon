@@ -13,6 +13,7 @@ mode: all
 # Purpose: Easy way to use talon during meetings via keyboard or foot pedal
 # TODO: combined both keys into one if possible
 key(keypad_1): 
+    #user.mouse_toggle_control_mouse()
     user.show_wake_notification()
     speech.enable()    
     user.toggle_mute()
