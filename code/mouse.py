@@ -246,6 +246,9 @@ def show_cursor_helper(show):
         ctrl.cursor_visible(show)
 
 
+#
+# NOTE: any save changes here will break every mouse related thing. Requiring restart to fix and see your changes 
+#
 def on_pop(active):
     print("you popped")
 
@@ -258,17 +261,28 @@ def on_pop(active):
     ):
         if setting_mouse_enable_pop_click.get() >= 1:
             ctrl.mouse_click(button=0, hold=16000)
-    else:
-        ctrl.key_press("pagedown")
+    
+    # so during zoom mouse we don't trigger this
+    elif eye_mouse.mouse.attached_tracker is None:
+        # TODO: dynamically change this? best might just be editing manually here
+        ctrl.key_press("left")
 
 
 noise.register("pop", on_pop)
 
-# def on_hiss(active):
-#     print("hiss", active)
-# noise.register("hiss", on_hiss)
-# noise.register("hiss_start", on_hiss)
-# noise.register("hiss_end", on_hiss)
+# TODO: setup something so you have to hiss for at least 0.5 seconds to trigger? So talking false positvies are ignored
+def on_hiss(active):
+    print("hiss", active)
+    if (eye_zoom_mouse.zoom_mouse.enabled
+       and eye_mouse.mouse.attached_tracker is not None 
+       and active):
+       # changing the default didn't make it go faster. only adding more function calls
+        actions.user.mouse_scroll_up_continuous()
+        actions.user.mouse_scroll_up_continuous()
+        actions.user.mouse_scroll_up_continuous()
+    else:
+        actions.user.mouse_scroll_stop()
+noise.register("hiss", on_hiss)
 
 
 
