@@ -280,6 +280,10 @@ def on_hiss(active):
         actions.user.mouse_scroll_up_continuous()
         actions.user.mouse_scroll_up_continuous()
         actions.user.mouse_scroll_up_continuous()
+        actions.user.mouse_scroll_up_continuous()
+        actions.user.mouse_scroll_up_continuous()
+        actions.user.mouse_scroll_up_continuous()
+        actions.user.mouse_scroll_up_continuous()
     else:
         actions.user.mouse_scroll_stop()
 noise.register("hiss", on_hiss)

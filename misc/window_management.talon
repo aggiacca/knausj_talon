@@ -35,3 +35,12 @@ desktop three: key(ctrl-3)
 system menu bar: key(ctrl-f2)
 system dock: key(ctrl-f3)
 spotlight: key(cmd-space)
+
+
+# TODO: move to a misc shortcuts file
+# TODO: another might be new window firefox -> twitch
+spotify play: 
+    user.switcher_focus("Spotify")
+    sleep(1000ms)
+    key(cmd-alt-1)
+    key(space)
