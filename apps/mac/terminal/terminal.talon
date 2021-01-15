@@ -1,8 +1,9 @@
 app: apple_terminal
-app: i_term_2
+app: iterm_2
 -
 #comment or remove tags for command sets you don't want
 tag(): user.file_manager
+tag(): user.generic_terminal
 tag(): user.git
 tag(): user.kubectl
 tag(): user.tabs
@@ -21,16 +22,12 @@ action(app.tab_previous):
   key(ctrl-shift-tab)
 action(app.window_open):
   key(cmd-n)
-
-rerun search:
-  key(ctrl-r)
-run last:
-  key(up)
-  key(enter)
 action(edit.page_down):
   key(command-pagedown)
 action(edit.page_up):
   key(command-pageup)
+rerun search:
+  key(ctrl-r)
 suspend:
   key(ctrl-z)
 resume:
