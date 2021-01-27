@@ -92,6 +92,21 @@ if app.platform == "windows":
 
 @mod.action_class
 class Actions:
+    # MY ADDED ACTIONS
+    def file_manager_open_item():
+        """file_manager_open_item"""
+        return
+
+    def file_manager_open_in_default_editor():
+        """file_manager_open_in_default_editor"""
+        return
+
+    def file_manager_trash_item():
+        """file_manager_trash_item"""
+        return
+
+    # END MY ACTIONS
+
     def file_manager_current_path() -> str:
         """Returns the current path for the active file manager."""
         return ""
