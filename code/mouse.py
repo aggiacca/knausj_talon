@@ -80,6 +80,13 @@ setting_mouse_wheel_down_amount = mod.setting(
     desc="The amount to scroll up/down (equivalent to mouse wheel on Windows by default)",
 )
 
+setting_mouse_pop_key = mod.setting(
+    "mouse_pop_key",
+    type=int,
+    default=1,
+    desc="decides which key pop uses when mouse control is off",
+)
+
 continuous_scoll_mode = ""
 
 
@@ -114,6 +121,11 @@ class Actions:
 
     def mouse_toggle_control_mouse():
         """Toggles control mouse"""
+        
+        # disable zoom mouse automatically if its on
+        if eye_zoom_mouse.zoom_mouse.enabled:
+            eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
+
         toggle_control(not config.control_mouse)
 
     def mouse_toggle_camera_overlay():
@@ -122,6 +134,11 @@ class Actions:
 
     def mouse_toggle_zoom_mouse():
         """Toggles zoom mouse"""
+        
+        # disable direct mouse automatically if its onf
+        if config.control_mouse:
+            toggle_control(not config.control_mouse)
+
         eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
 
     def mouse_cancel_zoom_mouse():
@@ -252,6 +269,7 @@ def show_cursor_helper(show):
 #
 def on_pop(active):
     print("you popped")
+    print(setting_mouse_pop_key.get())
 
     if gaze_job or scroll_job:
         if setting_mouse_enable_pop_stops_scroll.get() >= 1:
@@ -266,7 +284,10 @@ def on_pop(active):
     # so during zoom mouse we don't trigger this
     elif eye_mouse.mouse.attached_tracker is None:
         # TODO: dynamically change this? best might just be editing manually here
-        ctrl.key_press("left")
+        if setting_mouse_pop_key.get() == 1:
+            ctrl.key_press("right")
+        else:
+            ctrl.key_press("left")
 
 
 noise.register("pop", on_pop)

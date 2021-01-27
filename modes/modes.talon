@@ -4,6 +4,7 @@ mode: all
     
 (talon | talent) sleep: 
     user.show_sleep_notification()
+    user.mouse_sleep()
     speech.disable()
     
 (talon | talent) should wake: 

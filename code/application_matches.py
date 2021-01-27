@@ -47,6 +47,11 @@ os: mac
 and app.bundle: com.googlecode.iterm2
 """
 
+apps.kindle = """
+os: mac
+and app.bundle: com.amazon.Kindle
+"""
+
 # linux specific apps
 apps.keepass = """
 os: linux

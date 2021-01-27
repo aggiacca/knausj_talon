@@ -44,3 +44,8 @@ spotify play:
     sleep(1000ms)
     key(cmd-alt-1)
     key(space)
+
+spotify (stop | pause): 
+    key(space)
+    key(cmd-tab)
+    
