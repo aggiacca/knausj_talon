@@ -37,7 +37,9 @@ kill all:
   key(ctrl-c)
   
 node start:  insert("npm run start")
-node install: insert("npm install")
+node install:
+  insert("rm -rf node_modules && npm install")
+  key(enter)
 node build: insert("npm run build")
 node link: insert("npm link")
 node clean: insert("npm run clean")
