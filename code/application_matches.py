@@ -104,3 +104,4 @@ mod.apps.windows_power_shell = """
 os: windows
 and app.exe: powershell.exe
 """
+
