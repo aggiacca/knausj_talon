@@ -1,5 +1,4 @@
-#defines the various mode commands
-mode: all
+not mode: sleep
 -
     
 (talon | talent) sleep: 
@@ -52,7 +51,7 @@ key(f20):
 #dragon mode: user.dragon_mode()
 #talon mode: user.talon_mode()
 # end: these commands are really for windows & mac on Dragon.
-^mode dictation$:
+^dictation mode$:
     mode.disable("sleep")
     mode.disable("command")
     mode.enable("dictation")
