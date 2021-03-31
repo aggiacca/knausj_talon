@@ -22,6 +22,16 @@ and app.bundle: com.hnc.Discord
 """
 
 # apple specific apps
+apps.loophero = """
+os: mac
+and app.name: Loop Hero
+"""
+
+apps.intothebreach = """
+os: mac
+and app.name: Into the Breach 
+"""
+
 apps.datagrip = """
 os: mac
 and app.name: DataGrip

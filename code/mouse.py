@@ -99,6 +99,12 @@ setting_mouse_pop_key = mod.setting(
     desc="decides which key pop uses when mouse control is off",
 )
 
+setting_quick_hiss_toggle = mod.setting(
+    "quick_hiss_toggle",
+    type=int,
+    default=0,
+    desc="decides whether or not quick toggle mouse for hiss is on",
+)
 continuous_scoll_mode = ""
 
 
@@ -297,7 +303,12 @@ def on_pop(active):
         and eye_mouse.mouse.attached_tracker is not None
     ):
         if setting_mouse_enable_pop_click.get() >= 1:
-            ctrl.mouse_click(button=0, hold=16000)
+            # ctrl.mouse_click(button=0) 
+
+            # sometimes, like loop hero, talon clicks too fast for an application to register it
+            ctrl.mouse_click(button=0, down=True) 
+            actions.sleep("100ms")
+            ctrl.mouse_click(button=0, down=False)
     
     # so during zoom mouse we don't trigger this
     elif eye_mouse.mouse.attached_tracker is None:
@@ -313,6 +324,10 @@ noise.register("pop", on_pop)
 # TODO: setup something so you have to hiss for at least 0.5 seconds to trigger? So talking false positvies are ignored
 def on_hiss(active):
     print("hiss", active)
+    # print("app", app)
+    if(not active and setting_quick_hiss_toggle.get() >= 1):
+        actions.user.mouse_toggle_control_mouse()
+
     if (eye_zoom_mouse.zoom_mouse.enabled
        and eye_mouse.mouse.attached_tracker is not None 
        and active):

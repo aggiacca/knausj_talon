@@ -28,6 +28,11 @@ key(keypad_2):
 
 key(keypad_0): 
     user.mouse_toggle_control_mouse()
+    
+
+key(f20): 
+    user.mouse_toggle_control_mouse()
+
 
 #welcome back:
 #    user.mouse_wake()
