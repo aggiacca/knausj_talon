@@ -30,7 +30,7 @@ key(keypad_0):
     
 
 key(f20): 
-    user.mouse_toggle_control_mouse()
+   user.mouse_toggle_control_mouse()
 
 
 #welcome back:

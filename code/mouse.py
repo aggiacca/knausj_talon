@@ -303,11 +303,11 @@ def on_pop(active):
         and eye_mouse.mouse.attached_tracker is not None
     ):
         if setting_mouse_enable_pop_click.get() >= 1:
-            # ctrl.mouse_click(button=0) 
+            #ctrl.mouse_click(button=0) 
 
             # sometimes, like loop hero, talon clicks too fast for an application to register it
             ctrl.mouse_click(button=0, down=True) 
-            actions.sleep("100ms")
+            actions.sleep("50ms")
             ctrl.mouse_click(button=0, down=False)
     
     # so during zoom mouse we don't trigger this
