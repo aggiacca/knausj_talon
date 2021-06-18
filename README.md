@@ -13,7 +13,7 @@ Clone repo into `~/.talon/user`
 
 ```insert code:
 cd ~/.talon/user
-git clone git@github.com:knausj85/knausj_talon.git knausj_talon
+git clone https://github.com/knausj85/knausj_talon knausj_talon
 ```
     
 Alternatively, access the directory by right clicking the Talon icon in taskbar, clicking Scripting>Open ~/talon, and navigating to user.
@@ -39,7 +39,7 @@ Clone repo into `%AppData%\Talon\user`
 
 ```insert code:
 cd %AppData%\Talon\user
-git clone git@github.com:knausj85/knausj_talon.git knausj_talon
+git clone https://github.com/knausj85/knausj_talon knausj_talon
 ```
     
 Alternatively, access the directory by right clicking the Talon icon in taskbar, clicking Scripting>Open ~/talon, and navigating to user.
@@ -209,6 +209,10 @@ Notes:
 
 • If there no hidden files or folders, and the items are displayed in alphabetical order, you can typically issue the `follow <number>`, `file <number>` and `open <number>` commands based on the displayed order.
 
+To implement support for a new program, you need to implement the relevant file manager actions for your application and assert the user.file_manager tag.
+- There are a number of example implementations in the repository. Finder is a good example to copy and customize to your application as needed. 
+https://github.com/knausj85/knausj_talon/blob/5eae0b6a8f2269f24265e77feddbcc4bcf437c36/apps/mac/finder/finder.py#L16
+
 ## Terminal commands
 
 Many terminal programs are supported out of the box, but you may not want all the commands enabled. 
@@ -334,6 +338,10 @@ user.code_libraries
 ```
 
 where appropriate. See e.g. csharp.py/csharp.talon. At least, until we come up with something better 👍 
+
+## Automated tests
+
+There are a number of automated tests in the repository which are run outside of the Talon environment. To run them make sure you have the `pytest` python package installed. You can then just run the `pytest` command from the repository root to execute all the tests.
 
 # Talon documentation
 For official documentation on Talon's API and features, please visit https://talonvoice.com/docs/. 

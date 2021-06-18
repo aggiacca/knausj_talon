@@ -42,6 +42,8 @@ terminal window here: user.file_manager_terminal_window_here()
 show options: user.file_manager_show_pickers()
 hide options: user.file_manager_hide_pickers()
 ^follow <number>$: 
+(go parent | daddy): user.file_manager_open_parent()
+^follow <number>$:
     directory = user.file_manager_get_directory_by_index(number - 1)
     user.file_manager_open_directory(directory)
 ^follow {user.file_manager_directories}$: user.file_manager_open_directory(file_manager_directories)
