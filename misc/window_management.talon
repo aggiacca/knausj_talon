@@ -20,7 +20,7 @@ snap <user.running_applications> [screen] <number>:
 # 
 # my additions
 #
-window fullscreen: user.window_fullscreen()
+window fullscreen: key(ctrl-cmd-f)
 
 # TODO: make all below an action so it works on windows too generically
 screen lock: key(cmd-ctrl-q)
