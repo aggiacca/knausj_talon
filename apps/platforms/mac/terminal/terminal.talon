@@ -1,4 +1,5 @@
 app: apple_terminal
+app: iterm2
 -
 #comment or remove tags for command sets you don't want
 tag(): user.file_manager
