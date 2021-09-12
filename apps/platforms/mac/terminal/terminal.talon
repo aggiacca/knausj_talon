@@ -43,7 +43,7 @@ service tool:
 # TODO: Do the below for all of them
 #project builder: insert("web-builder")
 #go project builder:
-#  insert("cd ~/Documents/GitRepos/web-builder")
+#  insert("cd ~/Documents/GitRepos/repo/airkit/web-builder")
 #  key(enter)
 
 project talon:
@@ -51,105 +51,105 @@ project talon:
   key(enter)
   
 project directory:
-  insert("cd ~/Documents/GitRepos")
+  insert("cd ~/Documents/GitRepos/repo/airkit")
   key(enter)
 
 project builder: insert("web-builder")
 go project builder:
-  insert("cd ~/Documents/GitRepos/web-builder")
+  insert("cd ~/Documents/GitRepos/repo/airkit/node/web-builder")
   key(enter)
   
 project runtime: insert('node-cxr')
 go project runtime:
-  insert("cd ~/Documents/GitRepos/node-cxr")
+  insert("cd ~/Documents/GitRepos/repo/airkit/node/cxr")
   key(enter)
 
 project gateway: insert('node-session-gateway')
 go project gateway:
-  insert("cd ~/Documents/GitRepos/node-session-gateway")
+  insert("cd ~/Documents/GitRepos/repo/airkit/node/session-gateway")
   key(enter)
 
 project collections: insert('api-collections')
 go project collections:
-  insert("cd ~/Documents/GitRepos/api-collections")
+  insert("cd ~/Documents/GitRepos/repo/airkit/tools/api-collections")
   key(enter)
 
-project integration: insert('integration-testing')
-go project integration:
-  insert("cd ~/Documents/GitRepos/integration-testing")
+project testing: insert('testing')
+go project testing:
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/testing")
   key(enter)
 
 project object service: insert('object-service')
 go project object service:
-  insert("cd ~/Documents/GitRepos/object-service")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/object-service")
   key(enter)
 
 project public: insert('publicapi')
 go project public:
-  insert("cd ~/Documents/GitRepos/publicapi")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/publicapi")
   key(enter)
 
 project service tool: insert('pypi-service-tool')
 go project service tool:
-  insert("cd ~/Documents/GitRepos/pypi-service-tool")
+  insert("cd ~/Documents/GitRepos/repo/airkit/infra/service-tool")
   key(enter)
 
 project utilities: insert('pypi-utilities')
 go project utilities:
-  insert("cd ~/Documents/GitRepos/pypi-utilities")
+  insert("cd ~/Documents/GitRepos/repo/airkit/infra/pypi-utilities")
   key(enter)
 
 project cert processing: insert('ru-acme-processing')
 go project cert processing:
-  insert("cd ~/Documents/GitRepos/ru-acme-processing")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/acme-processing")
   key(enter)
 
 project postprocessing: insert('ru-assets-postprocessing')
 go project postprocessing:
-  insert("cd ~/Documents/GitRepos/ru-assets-postprocessing")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/assets-postprocessing")
   key(enter)
 
 project json store: insert('ru-json-store')
 go project json store:
-  insert("cd ~/Documents/GitRepos/ru-json-store")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/json-store")
   key(enter)
 
 project local service: insert('ru-local-service')
 go project local service:
-  insert("cd ~/Documents/GitRepos/ru-local-service")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/local-service")
   key(enter)
 
 project saml: insert('ru-saml')
 go project saml:
-  insert("cd ~/Documents/GitRepos/ru-saml")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/saml")
   key(enter)
 
 project service: insert('ru-service')
 go project service:
-  insert("cd ~/Documents/GitRepos/ru-service")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/ru-service")
   key(enter)
 
 project session manager: insert('ru-session-manager')
 go project session manager:
-  insert("cd ~/Documents/GitRepos/ru-session-manager")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/session-manager")
   key(enter)
 
 project system: insert('ru-system')
 go project system:
-  insert("cd ~/Documents/GitRepos/ru-system")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/system")
   key(enter)
 
 project reporting: insert('reporting')
 go project reporting:
-  insert("cd ~/Documents/GitRepos/reporting")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/reporting")
   key(enter)
 
 project sales force: insert('salesforce-subscription')
 go project sales force:
-  insert("cd ~/Documents/GitRepos/salesforce-subscription")
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/salesforce-subscription")
   key(enter)
 
-project infra: insert('infra-ingress')
-go project infra:
-  insert("cd ~/Documents/GitRepos/infra-ingress")
+project kit cloud: insert('kit-repository')
+go project kit cloud:
+  insert("cd ~/Documents/GitRepos/repo/airkit/kotlin/kit-repository")
   key(enter)

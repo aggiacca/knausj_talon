@@ -51,7 +51,7 @@ key(f20):
 #dragon mode: user.dragon_mode()
 #talon mode: user.talon_mode()
 # end: these commands are really for windows & mac on Dragon.
-^dictation mode$:
+^mode dictation$:
     mode.disable("sleep")
     mode.disable("command")
     mode.enable("dictation")
