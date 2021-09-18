@@ -32,6 +32,11 @@ os: mac
 and app.name: Into the Breach 
 """
 
+apps.eternalcardgame = """
+os: mac
+and app.name: Eternal Card Game
+"""
+
 apps.datagrip = """
 os: mac
 and app.name: DataGrip

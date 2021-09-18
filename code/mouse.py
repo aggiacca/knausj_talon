@@ -329,8 +329,14 @@ noise.register("pop", on_pop)
 def on_hiss(active):
     print("hiss", active)
     # print("app", app)
-    if(not active and setting_quick_hiss_toggle.get() >= 1):
+    if(not active and setting_quick_hiss_toggle.get() == 1):
         actions.user.mouse_toggle_control_mouse()
+
+    if setting_quick_hiss_toggle.get() == 2:
+        if active:
+            actions.user.mouse_drag(0)
+        else:
+            actions.user.mouse_drag_end()
 
     if (eye_zoom_mouse.zoom_mouse.enabled
        and eye_mouse.mouse.attached_tracker is not None 
