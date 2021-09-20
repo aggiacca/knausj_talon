@@ -37,6 +37,11 @@ os: mac
 and app.name: Eternal Card Game
 """
 
+apps.magicthegatheringarena = """
+os: mac
+and app.name: MTGA
+"""
+
 apps.datagrip = """
 os: mac
 and app.name: DataGrip
