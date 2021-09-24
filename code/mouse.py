@@ -93,8 +93,8 @@ setting_mouse_wheel_down_amount = mod.setting(
 
 setting_mouse_pop_key = mod.setting(
     "mouse_pop_key",
-    type=int,
-    default=1,
+    type=str,
+    default="right",
     desc="decides which key pop uses when mouse control is off",
 )
 
@@ -104,6 +104,14 @@ setting_quick_hiss_toggle = mod.setting(
     default=0,
     desc="decides whether or not quick toggle mouse for hiss is on",
 )
+
+setting_mouse_pop_hold = mod.setting(
+    "mouse_pop_hold",
+    type=int,
+    default=0,
+    desc="decides on how much to hold the mouse click",
+)
+
 continuous_scoll_mode = ""
 
 
@@ -307,20 +315,18 @@ def on_pop(active):
         and eye_mouse.mouse.attached_tracker is not None
     ):
         if setting_mouse_enable_pop_click.get() >= 1:
-            #ctrl.mouse_click(button=0) 
+            if setting_mouse_pop_hold.get() >= 1:
+                # sometimes, like loop hero, talon clicks too fast for an application to register it
+                ctrl.mouse_click(button=0, down=True) 
+                actions.sleep(f"{setting_mouse_pop_hold.get()}ms")
+                ctrl.mouse_click(button=0, down=False)
+            else:
+                ctrl.mouse_click(button=0) 
 
-            # sometimes, like loop hero, talon clicks too fast for an application to register it
-            ctrl.mouse_click(button=0, down=True) 
-            actions.sleep("50ms")
-            ctrl.mouse_click(button=0, down=False)
-    
+                
     # so during zoom mouse we don't trigger this
     elif eye_mouse.mouse.attached_tracker is None:
-        # TODO: dynamically change this? best might just be editing manually here
-        if setting_mouse_pop_key.get() == 1:
-            ctrl.key_press("right")
-        else:
-            ctrl.key_press("left")
+        ctrl.key_press(setting_mouse_pop_key.get())
 
 
 noise.register("pop", on_pop)

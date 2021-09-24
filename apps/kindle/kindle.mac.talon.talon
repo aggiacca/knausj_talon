@@ -1,4 +1,5 @@
 app: kindle
 -
 settings():
-  user.mouse_pop_key = 1
+  # default is right by this is an example
+  user.mouse_pop_key = "right"
