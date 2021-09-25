@@ -302,7 +302,7 @@ def show_cursor_helper(show):
 
 
 #
-# NOTE: any save changes here will break every mouse related thing. Requiring restart to fix and see your changes 
+# NOTE: Need to toggle the mouse control twice unsaved changes
 #
 def on_pop(active):
     print("you popped")
@@ -326,7 +326,11 @@ def on_pop(active):
                 
     # so during zoom mouse we don't trigger this
     elif eye_mouse.mouse.attached_tracker is None:
-        ctrl.key_press(setting_mouse_pop_key.get())
+        key = setting_mouse_pop_key.get()
+        if key in ["0", "1"]:
+            ctrl.mouse_click(button=int(key)) 
+        else:
+            ctrl.key_press(key)
 
 
 noise.register("pop", on_pop)
