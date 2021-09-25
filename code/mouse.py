@@ -338,7 +338,6 @@ noise.register("pop", on_pop)
 # TODO: setup something so you have to hiss for at least 0.5 seconds to trigger? So talking false positvies are ignored
 def on_hiss(active):
     print("hiss", active)
-    # print("app", app)
     if(not active and setting_quick_hiss_toggle.get() == 1):
         actions.user.mouse_toggle_control_mouse()
 
