@@ -4,6 +4,12 @@ from talon.mac import applescript
 import os
 
 ctx = Context()
+mod = Module()
+mod.apps.finder = """
+os: mac
+and app.bundle: com.apple.finder
+"""
+
 ctx.matches = r"""
 app: finder
 """
@@ -13,6 +19,14 @@ directories_to_exclude = {}
 
 @ctx.action_class('user')
 class UserActions:
+    # MY ACTIONS
+    def file_manager_open_item():
+        actions.key('cmd-down')
+    def file_manager_trash_item():
+        actions.key('cmd-backspace')
+    def file_manager_open_in_default_editor():
+        actions.key('cmd-shift-cmd-8')
+
     def file_manager_open_parent():
         actions.key('cmd-up')
     def file_manager_go_forward():

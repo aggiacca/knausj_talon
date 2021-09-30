@@ -50,3 +50,13 @@ class BrowserActions:
         #action(browser.title)
     def toggle_dev_tools():
         actions.key('cmd-alt-i')
+
+
+@ctx.action_class("app")
+class app_actions:
+    def tab_previous():
+        actions.key("ctrl-shift-tab")
+
+    def tab_next():
+        actions.key("ctrl-tab")
+

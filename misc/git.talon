@@ -21,7 +21,9 @@ git cherry pick skip: "git cherry-pick --skip "
 git clone: "git clone "
 # Leave \n out for confirmation since the operation is destructive
 git clean everything: "git clean -dfx"
-git commit message <user.text>: "git commit -m '{text}'"
+git commit message <user.text>:
+  insert( "git commit -m '{text}'")
+  key(left)
 git commit: 
   insert("git commit -m ''")
   key(left)
@@ -122,6 +124,8 @@ git remote: "git remote -v"
 git clean: "git clean -df"
 git revert: "git revert "
 git branch all: "git branch -a"
-git add all: "git add ."
+git add all:
+  insert("git add .") 
+  key(enter)
 git log files: "git log -c\n"
 git fetch all: "git fetch --all\n"

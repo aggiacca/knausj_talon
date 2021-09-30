@@ -5,12 +5,12 @@ mod = Module()
 
 apps = mod.apps
 
-# shared
-apps.spotify = """
-os: mac
-and app.bundle: com.spotify.client
-"""
+#
+# PURPOSE: used only when an app is used in multiple .talon files or doesn't have have .py file
+#
 
+
+# shared
 apps.zoom = """
 os: mac
 and app.bundle: us.zoom.xos
@@ -47,11 +47,6 @@ os: mac
 and app.name: DataGrip
 """
 
-apps.finder = """
-os: mac
-and app.bundle: com.apple.finder
-"""
-
 apps.rstudio = """
 os: mac
 and app.name: RStudio
@@ -65,11 +60,6 @@ and app.bundle: com.apple.Terminal
 apps.iterm2 = """
 os: mac
 and app.bundle: com.googlecode.iterm2
-"""
-
-apps.kindle = """
-os: mac
-and app.bundle: com.amazon.Kindle
 """
 
 # linux specific apps

@@ -160,6 +160,13 @@ class Actions:
             global extendCommands
             extendCommands = []
 
+    def mouse_long_right():
+        """click right mouse button, holding it down a little bit longer"""
+        print("mouse long right d")
+        ctrl.mouse_click(button=1, down=True)
+        time.sleep(0.5)
+        ctrl.mouse_click(button=1, up=True)
+
 
 ctx.matches = r"""
 app: jetbrains

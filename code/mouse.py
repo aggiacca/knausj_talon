@@ -330,7 +330,7 @@ def on_pop(active):
         if key in ["0", "1"]:
             ctrl.mouse_click(button=int(key)) 
         else:
-            ctrl.key_press(key)
+            actions.key(key)
 
 
 noise.register("pop", on_pop)

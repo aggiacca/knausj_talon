@@ -250,3 +250,6 @@ go camel right: user.camel_right()
 
 # requires plug-in: black-pycharm
 blacken: user.idea("action BLACKReformatCode")
+
+# Sometimes jet brains doesn't register the right click without a delay
+righty: user.mouse_long_right()
