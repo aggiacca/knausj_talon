@@ -2,6 +2,11 @@ from talon import Context, Module, actions, imgui, settings, ui
 import os
 
 # TODO: fit this to generic_terminal
+mod = Module()
+mod.apps.apple_terminal = """
+os: mac
+and app.bundle: com.apple.Terminal
+"""
 
 ctx = Context()
 ctx.matches = r"""

@@ -50,7 +50,7 @@ git pull fast forward: "git pull --ff-only\n"
 git pull <user.text>: "git pull {text} "
 git push: "git push --no-verify\n"
 #git push origin: "git push origin "
-git push origin: "git push -u origin "
+# git push origin: "git push -u origin "
 git push <user.text>: "git push {text} "
 git push tags: "git push --tags\n"
 git rebase: "git rebase\n"
@@ -129,3 +129,11 @@ git add all:
   key(enter)
 git log files: "git log -c\n"
 git fetch all: "git fetch --all\n"
+git checkout new <user.text>: "git checkout -b {text}"
+git diff all:
+  insert("git diff")
+  key(enter)
+# requires zsh
+git push origin: 
+  insert("gpsup")
+  key(enter)

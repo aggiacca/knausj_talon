@@ -201,12 +201,12 @@ continue: user.idea("action Resume")
 (grow | shrink) window up: user.idea("action ResizeToolWindowUp")
 (grow | shrink) window down: user.idea("action ResizeToolWindowDown")
 # Movement
-go next (error | air): user.idea("action GotoNextError")
-go last (error | air): user.idea("action GotoPreviousError")
-fix next (error | air):
+problem next: user.idea("action GotoNextError")
+problem last: user.idea("action GotoPreviousError")
+problem fix [next]:
     user.idea("action GotoNextError")
     user.idea("action ShowIntentionActions")
-fix last (error | air):
+problem fix last:
     user.idea("action GotoPreviousError")
     user.idea("action ShowIntentionActions")
 # Special Selects
