@@ -199,6 +199,7 @@ full screen: user.vscode("workbench.action.toggleFullScreen")
 
 curse undo: user.vscode("cursorUndo")
 
+# basically select next occurrence
 select word: user.vscode("editor.action.addSelectionToNextFindMatch")
 skip word: user.vscode("editor.action.moveSelectionToNextFindMatch")
 

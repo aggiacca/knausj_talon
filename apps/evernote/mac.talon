@@ -5,7 +5,7 @@ tag(): tabs
 
 settings():
     # Necessary to stop commands like 'slap' getting jumbled
-    key_wait = 6.0
+    key_wait = 9.0
 
 
 search (files | notes): key(cmd-j)

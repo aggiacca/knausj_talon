@@ -32,8 +32,8 @@ workspace <number>: key("cmd-{number}")
 
 (slack | lack) (my stuff | activity): key(cmd-shift-m)
 (slack | lack) directory: key(cmd-shift-e)
-(slack | lack) (starred [items] | stars | saved): key(cmd-shift-s)
-(slack | lack) unread [messages]: key(cmd-j)
+(slack | lack) (starred [items] | stars): key(cmd-shift-s)
+(slack | lack) unread [messages]: key(cmd-shift-a)
 (go | undo | toggle) full: key(ctrl-cmd-f)
 # Messaging
 grab left: key(shift-up)
