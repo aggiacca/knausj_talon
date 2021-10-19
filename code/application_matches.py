@@ -37,6 +37,11 @@ os: mac
 and app.name: Eternal Card Game
 """
 
+apps.cookservedelicious = """
+os: mac
+and app.name: CSD3
+"""
+
 apps.magicthegatheringarena = """
 os: mac
 and app.name: MTGA
@@ -52,10 +57,6 @@ os: mac
 and app.name: RStudio
 """
 
-apps.apple_terminal = """
-os: mac
-and app.bundle: com.apple.Terminal
-"""
 
 apps.iterm2 = """
 os: mac

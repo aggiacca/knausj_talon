@@ -36,10 +36,10 @@ git fetch all: "git fetch --all\n"
 git fetch <user.text>: "git fetch {text}"
 git fetch prune: "git fetch --prune\n"
 git in it: "git init\n"
-git log all: "git log\n"
-git log all changes: "git log -c\n"
-git log: "git log "
-git log changes: "git log -c "
+git log basic: "git log\n"
+git log basic changes: "git log -c\n"
+# git log: "git log "
+# git log changes: "git log -c "
 git merge: "git merge "
 git merge <user.text>:"git merge {text}"
 git move: "git mv "
@@ -129,11 +129,9 @@ git add all:
   key(enter)
 git log files: "git log -c\n"
 git fetch all: "git fetch --all\n"
-git checkout new <user.text>: "git checkout -b {text}"
-git diff all:
-  insert("git diff")
-  key(enter)
+git diff all: "git diff\n"
 # requires zsh
-git push origin: 
-  insert("gpsup")
-  key(enter)
+git push origin: "gpsup\n"
+git log: "glol\n"
+git log all: "glola\n"
+git checkout new: "gcb "

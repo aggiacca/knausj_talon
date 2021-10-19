@@ -118,3 +118,13 @@ wheel tiny right here:
 curse yes: user.mouse_show_cursor()
 curse no: user.mouse_hide_cursor()
 copy mouse position: user.copy_mouse_position()
+
+
+warp:
+  user.warp_mouse()
+
+glect:
+  user.kingfisher_click(2)
+
+glimpse:
+  user.kingfisher_click(1)

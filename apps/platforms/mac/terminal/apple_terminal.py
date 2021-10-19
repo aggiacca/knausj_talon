@@ -1,4 +1,4 @@
-from talon import Context, actions, ui
+from talon import Context, actions, ui, Module
 import os
 
 # TODO: fit this to generic_terminal

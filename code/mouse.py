@@ -24,6 +24,7 @@ scroll_job = None
 gaze_job = None
 cancel_scroll_on_pop = True
 control_mouse_forced = False
+sleep_time = 0.30
 
 default_cursor = {
     "AppStarting": r"%SystemRoot%\Cursors\aero_working.ani",
@@ -264,7 +265,36 @@ class Actions:
         """move the mouse cursor to the center of the currently active window"""
         rect = ui.active_window().rect
         ctrl.mouse_move(rect.left + (rect.width / 2), rect.top + (rect.height / 2))
+    
+    # additions
+    def kingfisher_click(times: int):
+        """Activates the eyetracker for a brief second to move the mouse, then clicks the targeted area N times, and returns the mouse back to where it was"""
+        pos = ctrl.mouse_pos()
+        
+        actions.user.enable_tracker_mouse()
+        actions.sleep(sleep_time)
+        actions.user.disable_tracker_mouse()
+        
+        for i in range(times):
+            ctrl.mouse_click(0)
+        
+        ctrl.mouse_move(pos[0], pos[1])
 
+    def warp_mouse():
+        """Activates the eyetracker for a brief second to move the mouse"""
+        pos = ctrl.mouse_pos()
+        
+        actions.user.enable_tracker_mouse()
+        actions.sleep(sleep_time)
+        actions.user.disable_tracker_mouse()
+
+    def enable_tracker_mouse():
+        """Enables eyetracking"""
+        actions.user.mouse_toggle_control_mouse()
+        
+    def disable_tracker_mouse():
+        """Disables eyetracking"""
+        actions.user.mouse_toggle_control_mouse()
 
 def show_cursor_helper(show):
     """Show/hide the cursor"""

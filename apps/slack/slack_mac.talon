@@ -4,8 +4,7 @@ app: slack
 tag(): user.voice_chat
 tag(): user.messaging
 
-    # Basics
-
+# Basics
 (slack | lack) [direct] messages: key(cmd-shift-k)
 
 
@@ -17,7 +16,7 @@ tag(): user.messaging
 (slack | lack) threads: key(cmd-shift-t)
 toggle sidebar: key(cmd-shift-d)
 
-    # Workspace
+# Workspace
 workspace <number>: key("cmd-{number}")
 # Channel
 (slack | lack) [channel] info: key(cmd-shift-i)
@@ -32,7 +31,7 @@ workspace <number>: key("cmd-{number}")
 
 (slack | lack) (my stuff | activity): key(cmd-shift-m)
 (slack | lack) directory: key(cmd-shift-e)
-(slack | lack) (starred [items] | stars): key(cmd-shift-s)
+(slack | lack) (starred [items] | stars | saved): key(cmd-shift-s)
 (slack | lack) unread [messages]: key(cmd-shift-a)
 (go | undo | toggle) full: key(ctrl-cmd-f)
 # Messaging
