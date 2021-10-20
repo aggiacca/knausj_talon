@@ -15,6 +15,7 @@ from talon import (
 )
 from talon_plugins import eye_mouse, eye_zoom_mouse
 from talon_plugins.eye_mouse import config, toggle_camera_overlay, toggle_control
+from time import sleep, time
 
 key = actions.key
 self = actions.self
@@ -92,6 +93,7 @@ setting_mouse_wheel_down_amount = mod.setting(
     desc="The amount to scroll up/down (equivalent to mouse wheel on Windows by default)",
 )
 
+# My Additions
 setting_mouse_pop_key = mod.setting(
     "mouse_pop_key",
     type=str,
@@ -111,6 +113,13 @@ setting_mouse_pop_hold = mod.setting(
     type=int,
     default=0,
     desc="decides on how much to hold the mouse click",
+)
+
+setting_hiss_threshold = mod.setting(
+    "hiss_threshold",
+    type=int,
+    default=0,
+    desc="defines how long you must hiss in milliseconds before the hiss triggers",
 )
 
 continuous_scoll_mode = ""
@@ -365,9 +374,34 @@ def on_pop(active):
 
 noise.register("pop", on_pop)
 
-# TODO: setup something so you have to hiss for at least 0.5 seconds to trigger? So talking false positvies are ignored
-def on_hiss(active):
-    print("hiss", active)
+#
+# Hissing
+# 
+running = False
+threshold_passed = False
+
+def still_running():
+    global running
+    global threshold_passed
+    if running:
+        threshold_passed = True
+        hiss_work(True)
+        print('hiss duration passed threshold, hiss=active')
+
+def on_hiss(is_active):
+    global running
+    global threshold_passed
+    if is_active:
+        running = True
+        cron.after(f'{setting_hiss_threshold.get()}ms', still_running)
+    else:
+        running = False
+        if threshold_passed:
+            threshold_passed = False
+            hiss_work(False)
+            print('end of hiss detected, hiss=not active')
+
+def hiss_work(active):
     if(not active and setting_quick_hiss_toggle.get() == 1):
         actions.user.mouse_toggle_control_mouse()
 
@@ -390,8 +424,8 @@ def on_hiss(active):
         actions.user.mouse_scroll_up_continuous()
     else:
         actions.user.mouse_scroll_stop()
-noise.register("hiss", on_hiss)
 
+noise.register('hiss', on_hiss)
 
 
 def mouse_scroll(amount):
