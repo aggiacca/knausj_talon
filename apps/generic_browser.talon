@@ -33,9 +33,16 @@ show cache: browser.show_clear_cache()
 dev tools: browser.toggle_dev_tools()
 
 #TODO: make these actions
-go to end tab: key(cmd-9)
 zoom reset: key(cmd-0)
 
+# Sites
+site amazon: browser.go('www.amazon.com')
+site read it: browser.go('www.reddit.com')
+site twitch: browser.go('www.twitch.tv')
+site drive: browser.go('https://drive.google.com/drive/my-drive')
+site maps: browser.go('https://www.google.com/maps')
+site disney: browser.go('https://www.disneyplus.com/home')
+    
 # personal vimium
 [open] link: key(f)
 [open] link new: key(shift-f)

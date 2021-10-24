@@ -87,11 +87,10 @@ problem next: user.vscode("editor.action.marker.nextInFiles")
 problem last: user.vscode("editor.action.marker.prevInFiles")
 problem fix: user.vscode("problems.action.showQuickFixes")
 rename that: user.vscode("editor.action.rename")
-refactor that: user.vscode("editor.action.refactor")
 whitespace trim: user.vscode("editor.action.trimTrailingWhitespace")
 language switch: user.vscode("workbench.action.editor.changeLanguageMode")
 refactor rename: user.vscode("editor.action.rename")
-refactor this: user.vscode("editor.action.refactor")
+refactor (this | that): user.vscode("editor.action.refactor")
 
 #code navigation
 (go declaration | follow): user.vscode("editor.action.revealDefinition")
