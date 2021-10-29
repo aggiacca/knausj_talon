@@ -41,7 +41,11 @@ site read it: browser.go('www.reddit.com')
 site twitch: browser.go('www.twitch.tv')
 site drive: browser.go('https://drive.google.com/drive/my-drive')
 site maps: browser.go('https://www.google.com/maps')
+site calendar: browser.go('https://calendar.google.com/calendar/u/0/r')
 site disney: browser.go('https://www.disneyplus.com/home')
+site talon: browser.go('https://search.talonvoice.com/search/')
+site Netflix: browser.go('https://www.netflix.com/browse')
+site YouTube: browser.go('https://www.youtube.com/')
     
 # personal vimium
 [open] link: key(f)
@@ -51,12 +55,15 @@ tab move left: key(< <)
 
 tab (dupe | duplicate): key(y t)
 (tabs | tab) search: key(T)
+# requires vimium settings change
+tab pin: key(ctrl-p)
 
 bookmark open: key(b)
 bookmark open new: key(B)
 tab to window: key(W)
+first input: key(g i)
 
-
+enable scripts: key(ctrl-shift-alt-1)
 # 2shea's vimium
 #todo - port to apps
 # navigating current page

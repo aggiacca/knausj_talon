@@ -11,7 +11,8 @@ tag(): user.tabs
 
 # my code
 
-node start:  insert("npm run start")
+node start:  insert("npm run start\n")
+node start local:  insert("npm run start:local\n")
 node install:
   insert("rm -rf node_modules && npm install")
   key(enter)
