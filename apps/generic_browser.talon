@@ -8,7 +8,24 @@ tag: browser
 go home: browser.go_home()
 [go] forward: browser.go_forward()
 go (back | backward): browser.go_back()
+
+# ex: site amazon
 go to {user.website}: browser.go(website)
+# TODO: doesn't seem to quite work
+site {user.website}: browser.go(website)
+# Sites - remove
+site amazon: browser.go('www.amazon.com')
+site read it: browser.go('www.reddit.com')
+site twitch: browser.go('www.twitch.tv')
+site [google] drive: browser.go('https://drive.google.com/drive/my-drive')
+site [google] maps: browser.go('https://www.google.com/maps')
+site [google] calendar: browser.go('https://calendar.google.com/calendar/u/0/r')
+site [google] (mail|email|gmail): browser.go('https://mail.google.com/mail/u/0/#inbox')
+site disney: browser.go('https://www.disneyplus.com/home')
+site talon: browser.go('https://search.talonvoice.com/search/')
+site Netflix: browser.go('https://www.netflix.com/browse')
+site YouTube: browser.go('https://www.youtube.com/')
+
 go private: browser.open_private_window()
 
 bookmark it: browser.bookmark()
@@ -35,17 +52,6 @@ dev tools: browser.toggle_dev_tools()
 #TODO: make these actions
 zoom reset: key(cmd-0)
 
-# Sites
-site amazon: browser.go('www.amazon.com')
-site read it: browser.go('www.reddit.com')
-site twitch: browser.go('www.twitch.tv')
-site drive: browser.go('https://drive.google.com/drive/my-drive')
-site maps: browser.go('https://www.google.com/maps')
-site calendar: browser.go('https://calendar.google.com/calendar/u/0/r')
-site disney: browser.go('https://www.disneyplus.com/home')
-site talon: browser.go('https://search.talonvoice.com/search/')
-site Netflix: browser.go('https://www.netflix.com/browse')
-site YouTube: browser.go('https://www.youtube.com/')
     
 # personal vimium
 [open] link: key(f)

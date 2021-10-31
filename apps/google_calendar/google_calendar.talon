@@ -1,6 +1,6 @@
 app: Firefox
 app: Google Chrome
-title: /Google Calendar/
+title: /Calendar/
 -
 # Make sure to disable Vimium 
 # You must also enable shortcuts in google calendar

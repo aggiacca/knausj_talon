@@ -22,6 +22,16 @@ website_defaults = {
     "gist": "https://gist.github.com/",
     "wikipedia": "https://en.wikipedia.org/",
     "youtube": "https://www.youtube.com/",
+
+    # My additions - not working
+    "reddit": "https://www.reddit.com",
+    "twitch": "https://www.twitch.tv",
+    "Disney": "https://www.disneyplus.com/home",
+    "talon": "https://search.talonvoice.com/search/",
+    "Netflix": "https://www.netflix.com/browse",
+    "calendar": "https://calendar.google.com",
+    "maps": "https://maps.google.com/",
+    "drive": "https://drive.google.com/drive/my-drive",
 }
 
 _search_engine_defaults = {

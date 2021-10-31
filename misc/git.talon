@@ -120,7 +120,6 @@ git commit highlighted:
 
 # My additions
 git config list: "git config --list"
-git remote: "git remote -v"  
 git clean: "git clean -df"
 git revert: "git revert "
 git branch all: "git branch -a"
@@ -128,7 +127,6 @@ git add all:
   insert("git add .") 
   key(enter)
 git log files: "git log -c\n"
-git fetch all: "git fetch --all\n"
 git diff all: "git diff\n"
 # requires zsh
 git push origin: "gpsup\n"

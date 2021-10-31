@@ -7,13 +7,11 @@ manager show: user.file_manager_toggle_pickers()
 # Shared
 #
 new folder: user.file_manager_new_folder()
-daddy: user.file_manager_open_parent()
 
 go pictures: user.file_manager_open_user_directory("Pictures")
 go desk: user.file_manager_open_user_directory("Desktop")
 go docks: user.file_manager_open_user_directory("Documents")
 go downloads: user.file_manager_open_user_directory("Downloads")
-go pictures: user.file_manager_open_user_directory("Pictures")
 go profile: user.file_manager_open_user_directory("")
 go (documents | docks): user.file_manager_open_user_directory("Documents")
 go computer: user.file_manager_open_directory("/Volumes")
@@ -41,7 +39,6 @@ terminal window here: user.file_manager_terminal_window_here()
 # GUI Helper
 show options: user.file_manager_show_pickers()
 hide options: user.file_manager_hide_pickers()
-^follow <number>$: 
 (go parent | daddy): user.file_manager_open_parent()
 ^follow numb <number_small>$: 
     directory = user.file_manager_get_directory_by_index(number_small - 1)
