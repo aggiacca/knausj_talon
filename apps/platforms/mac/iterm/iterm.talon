@@ -11,8 +11,13 @@ tag(): user.tabs
 
 # my code
 
+docker list: insert('docker ps\n')
+docker logs: insert('docker logs ')
+docker stop: insert('docker stop ')
+
 node start:  insert("npm run start\n")
 node start local:  insert("npm run start:local\n")
+node start debug:  insert("npm run start:debug\n")
 node install:
   insert("rm -rf node_modules && npm install")
   key(enter)

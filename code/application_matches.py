@@ -37,6 +37,11 @@ os: mac
 and app.name: Eternal Card Game
 """
 
+apps.guildofengineering = """
+os: mac
+and app.name: Ultimate Dungeoneering
+"""
+
 apps.cookservedelicious = """
 os: mac
 and app.name: CSD3

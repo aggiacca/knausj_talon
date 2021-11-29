@@ -1,5 +1,4 @@
-app: Firefox
-app: Google Chrome
+tag: browser
 title: /Calendar/
 -
 # Make sure to disable Vimium 
