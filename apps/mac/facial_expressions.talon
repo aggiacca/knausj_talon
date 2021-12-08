@@ -1,7 +1,10 @@
-# Facial actions
-# face(raise_eyebrows): mouse_click(0)
-# face(pucker_lips_outwards): mouse_click(1)
-# face(pucker_lips_left): user.mouse_drag()
-# face(pucker_lips_right):
-#     mouse_click(0)
-#     mouse_click(0)
+# Requires all facial actions to be set to left click in accessibility options
+face(raise_eyebrows): user.facial_expression_raise_eyebrows()
+face(pucker_lips_outwards): user.facial_expression_pucker_lips_outwards()
+face(pucker_lips_left): user.facial_expression_pucker_lips_left()
+face(pucker_lips_right):user.facial_expression_pucker_lips_right()
+face(smile): user.facial_expression_smile()
+face(stick_out_tongue): user.facial_expression_stick_out_tongue()
+face(open_mouth): user.facial_expression_open_mouth()
+# face(blink): key(d)
+# face(scrunch_nose): key(d)

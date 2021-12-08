@@ -123,7 +123,7 @@ setting_hiss_threshold = mod.setting(
 )
 
 continuous_scoll_mode = ""
-
+hiss_mouse = False
 
 @imgui.open(x=700, y=0)
 def gui_wheel(gui: imgui.GUI):
@@ -153,6 +153,14 @@ class Actions:
     def mouse_calibrate():
         """Start calibration"""
         eye_mouse.calib_start()
+
+    def mouse_toggle_hiss_mouse():
+        """Toggles hiss mouse"""
+        # TODO: better way to hold check
+        global hiss_mouse
+        hiss_mouse = not hiss_mouse
+        print(hiss_mouse)
+        actions.user.mouse_toggle_control_mouse()
 
     def mouse_toggle_control_mouse():
         """Toggles control mouse"""
@@ -377,8 +385,29 @@ noise.register("pop", on_pop)
 #
 # Hissing
 # 
+@mod.action_class
+class HissActions:
+    def hiss_active():
+        """hiss is active"""
+        # actions.user.mouse_drag(0)
+        actions.user.mouse_toggle_control_mouse()
+
+
+    def hiss_deactivate():
+        """hiss has ended"""
+        # actions.user.mouse_drag_end()
+        pass
+
+
 running = False
 threshold_passed = False
+
+def get_hiss_threshold():
+    global hiss_mouse
+    if hiss_mouse:
+        return 600
+    else:   
+        return setting_hiss_threshold.get() 
 
 def still_running():
     global running
@@ -393,7 +422,7 @@ def on_hiss(is_active):
     global threshold_passed
     if is_active:
         running = True
-        cron.after(f'{setting_hiss_threshold.get()}ms', still_running)
+        cron.after(f'{get_hiss_threshold()}ms', still_running)
     else:
         running = False
         if threshold_passed:
@@ -402,29 +431,30 @@ def on_hiss(is_active):
             print('end of hiss detected, hiss=not active')
 
 def hiss_work(active):
-    if(not active and setting_quick_hiss_toggle.get() == 1):
-        actions.user.mouse_toggle_control_mouse()
-
-    if setting_quick_hiss_toggle.get() == 2:
-        if active:
-            actions.user.mouse_drag(0)
+    # zoom mouse override
+    # print("hiss work")
+    if eye_zoom_mouse.zoom_mouse.enabled:
+        # print("zoom mouse enabled")
+        if (eye_mouse.mouse.attached_tracker is not None and active):
+            # changing the default didn't make it go faster. only adding more function calls
+            actions.user.mouse_scroll_up_continuous()
+            actions.user.mouse_scroll_up_continuous()
+            actions.user.mouse_scroll_up_continuous()
+            actions.user.mouse_scroll_up_continuous()
+            actions.user.mouse_scroll_up_continuous()
+            actions.user.mouse_scroll_up_continuous()
+            actions.user.mouse_scroll_up_continuous()
         else:
-            actions.user.mouse_drag_end()
-
-    if (eye_zoom_mouse.zoom_mouse.enabled
-       and eye_mouse.mouse.attached_tracker is not None 
-       and active):
-       # changing the default didn't make it go faster. only adding more function calls
-        actions.user.mouse_scroll_up_continuous()
-        actions.user.mouse_scroll_up_continuous()
-        actions.user.mouse_scroll_up_continuous()
-        actions.user.mouse_scroll_up_continuous()
-        actions.user.mouse_scroll_up_continuous()
-        actions.user.mouse_scroll_up_continuous()
-        actions.user.mouse_scroll_up_continuous()
+            actions.user.mouse_scroll_stop()
+    elif eye_mouse.mouse.attached_tracker and hiss_mouse and active:
+        ctrl.mouse_click(0)
     else:
-        actions.user.mouse_scroll_stop()
-
+        if setting_quick_hiss_toggle.get() == 1:
+            if active:
+                actions.user.hiss_activate()
+            else:
+                actions.user.hiss_deactivate()
+        
 noise.register('hiss', on_hiss)
 
 

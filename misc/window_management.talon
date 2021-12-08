@@ -37,6 +37,23 @@ desktop three: key(ctrl-3)
 system menu bar: key(ctrl-f2)
 system dock: key(ctrl-f3)
 spotlight: key(cmd-space)
+accessibility: key(alt-cmd-f5)
+# TODO: Find a better way to do this
+toggle face controls:
+    key(alt-cmd-f5)
+    sleep(3000ms)
+    key(tab)
+    key(tab)
+    key(tab)
+    key(tab)
+    key(tab)
+    key(tab)
+    key(tab)
+    key(tab)
+    key(tab)
+    key(tab)
+    key(space)
+    key(escape)
 
 
 # TODO: move to a misc shortcuts file
