@@ -67,4 +67,4 @@ spotify play:
 spotify (stop | pause): 
     key(space)
     key(cmd-tab)
-    
+Alfred: key(alt-space) 

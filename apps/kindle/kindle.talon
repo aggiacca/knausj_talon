@@ -3,6 +3,8 @@ app: kindle
 settings():
   # default is right but this is an example
   user.mouse_pop_key = "right"
+  user.quick_hiss_toggle = 1
+  user.hiss_threshold = 600
 
 
 bookmark [it]: user.kindle_bookmark()

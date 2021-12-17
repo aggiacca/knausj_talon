@@ -154,17 +154,11 @@ class Actions:
         """Start calibration"""
         eye_mouse.calib_start()
 
-    def mouse_toggle_hiss_mouse():
-        """Toggles hiss mouse"""
-        # TODO: better way to hold check
-        global hiss_mouse
-        hiss_mouse = not hiss_mouse
-        print(hiss_mouse)
-        actions.user.mouse_toggle_control_mouse()
-
     def mouse_toggle_control_mouse():
         """Toggles control mouse"""
         
+        actions.user.disable_hiss_mouse()
+
         # disable zoom mouse automatically if its on
         if eye_zoom_mouse.zoom_mouse.enabled:
             eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
@@ -178,6 +172,7 @@ class Actions:
     def mouse_toggle_zoom_mouse():
         """Toggles zoom mouse"""
         
+        actions.user.disable_hiss_mouse()
         # disable direct mouse automatically if its onf
         if config.control_mouse:
             toggle_control(not config.control_mouse)
@@ -214,6 +209,7 @@ class Actions:
     def mouse_sleep():
         """Disables control mouse, zoom mouse, and re-enables cursor"""
         eye_zoom_mouse.toggle_zoom_mouse(False)
+        actions.user.disable_hiss_mouse()
         toggle_control(False)
         show_cursor_helper(True)
         stop_scroll()
@@ -313,6 +309,26 @@ class Actions:
         """Disables eyetracking"""
         actions.user.mouse_toggle_control_mouse()
 
+    def disable_hiss_mouse():
+        """disable hiss mouse"""
+        global hiss_mouse
+        hiss_mouse = False
+
+    def mouse_toggle_hiss_mouse():
+        """Toggles hiss mouse"""
+        # TODO: better way to hold check
+        global hiss_mouse
+        hiss_mouse = not hiss_mouse
+        print(hiss_mouse)
+
+        # disable zoom mouse automatically if its on
+        if eye_zoom_mouse.zoom_mouse.enabled:
+            eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
+
+        if not config.control_mouse:
+            toggle_control(True)
+
+
 def show_cursor_helper(show):
     """Show/hide the cursor"""
     if app.platform == "windows":
@@ -387,7 +403,7 @@ noise.register("pop", on_pop)
 # 
 @mod.action_class
 class HissActions:
-    def hiss_active():
+    def hiss_activate():
         """hiss is active"""
         # actions.user.mouse_drag(0)
         actions.user.mouse_toggle_control_mouse()

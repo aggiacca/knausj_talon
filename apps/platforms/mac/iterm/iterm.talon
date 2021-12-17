@@ -26,7 +26,7 @@ node link: insert("npm link")
 node clean: insert("npm run clean")
 node storybook: insert("npm run storybook")
 node link runtime: insert("npm link @ruist/cxr")
-node code (gen | generation): insert('npm run code-gen')
+node code (gen | generation): insert('npm run code-gen\n')
 clean modules:
     insert("rm -rf node_modules")
     key(enter)

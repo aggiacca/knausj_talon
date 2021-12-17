@@ -9,4 +9,4 @@ app: eternalcardgame
 @ctx.action_class('user')
 class UserActions:
     def facial_expression_pucker_lips_outwards():actions.key('a')
-    def hiss_active(): ctrl.mouse_click(0)
+    def hiss_activate(): ctrl.mouse_click(0)

@@ -7,7 +7,12 @@ run calibration: user.mouse_calibrate()
 
 pop right: user.mouse_pop_key_right()
 
-#touch
+# alternate clicking statements for variety and to avoid strain
+touch:
+	mouse_click(0)
+rich:
+	mouse_click(0)
+
 cliff: 
 	mouse_click(0)
 	# close the mouse grid if open

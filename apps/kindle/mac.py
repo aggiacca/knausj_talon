@@ -22,3 +22,6 @@ class UserActions:
         actions.key('cmd-g')
         actions.insert(str(number))
         actions.key('enter')
+
+    # hiss override
+    def hiss_activate():  actions.key('right')
