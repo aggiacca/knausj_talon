@@ -101,8 +101,8 @@ setting_mouse_pop_key = mod.setting(
     desc="decides which key pop uses when mouse control is off",
 )
 
-setting_quick_hiss_toggle = mod.setting(
-    "quick_hiss_toggle",
+setting_hiss_toggle = mod.setting(
+    "hiss_toggle",
     type=int,
     default=0,
     desc="decides whether or not quick toggle mouse for hiss is on",
@@ -465,7 +465,7 @@ def hiss_work(active):
     elif eye_mouse.mouse.attached_tracker and hiss_mouse and active:
         ctrl.mouse_click(0)
     else:
-        if setting_quick_hiss_toggle.get() == 1:
+        if setting_hiss_toggle.get() == 1:
             if active:
                 actions.user.hiss_activate()
             else:

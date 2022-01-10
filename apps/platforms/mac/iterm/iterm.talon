@@ -12,6 +12,8 @@ tag(): user.tabs
 # my code
 
 docker list: insert('docker ps\n')
+docker kill all: insert('docker kill $(docker ps -q) \n')
+docker network (create | new): insert('docker network create ')
 docker logs: insert('docker logs ')
 docker stop: insert('docker stop ')
 
