@@ -1,5 +1,8 @@
 app: kindle
 -
+# Set tags
+tag(): user.pages
+
 settings():
   # default is right but this is an example
   user.mouse_pop_key = "right"

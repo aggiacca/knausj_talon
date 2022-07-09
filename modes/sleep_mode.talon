@@ -5,7 +5,3 @@ settings():
     user.mouse_enable_pop_stops_scroll = 0
 	#enable pop click with 'control mouse' mode
 	user.mouse_enable_pop_click = 0
-
-(talon | talent) should wake: 
-    user.show_wake_notification()
-    speech.enable()

@@ -27,3 +27,14 @@ class kindle_actions:
 
     def kindle_go_page_num(number: int):
         """Go to page numbered"""
+from talon import Module
+
+# --- App definition ---
+mod = Module()
+mod.apps.kindle = """
+os: windows
+and app.name: Kindle
+os: windows
+and app.exe: Kindle.exe
+"""
+# TODO: mac context and implementation
