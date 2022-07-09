@@ -38,7 +38,7 @@ dev login:
   key(enter)
 
 service tool:
-  insert("service-tool -v")
+  insert("service-tool -e publicapi ru-assets-postprocessing ")
 
 
 # TODO: Do the below for all of them

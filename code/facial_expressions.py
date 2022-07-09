@@ -14,8 +14,8 @@ class Actions:
 
     def facial_expression_pucker_lips_outwards():
         """pucker lips outwards action"""
-        ctrl.mouse_click(0)
-        ctrl.mouse_click(0)
+        #ctrl.mouse_click(0)
+        #ctrl.mouse_click(0)
 
     def facial_expression_pucker_lips_left():
         """pucker lips left action"""
@@ -27,6 +27,7 @@ class Actions:
 
     def facial_expression_stick_out_tongue():
         """stick out tongue action"""
+        ctrl.mouse_click(0)
         return
 
     def facial_expression_open_mouth():

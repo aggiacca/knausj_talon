@@ -388,12 +388,12 @@ def on_pop(active):
 
                 
     # so during zoom mouse we don't trigger this
-    elif eye_mouse.mouse.attached_tracker is None:
-        key = setting_mouse_pop_key.get()
-        if key in ["0", "1"]:
-            ctrl.mouse_click(button=int(key)) 
-        else:
-            actions.key(key)
+    # elif eye_mouse.mouse.attached_tracker is None:
+    #     key = setting_mouse_pop_key.get()
+    #     if key in ["0", "1"]:
+    #         ctrl.mouse_click(button=int(key)) 
+    #     else:
+    #         actions.key(key)
 
 
 noise.register("pop", on_pop)
