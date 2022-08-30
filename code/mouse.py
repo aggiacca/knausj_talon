@@ -13,7 +13,7 @@ scroll_job = None
 gaze_job = None
 cancel_scroll_on_pop = True
 control_mouse_forced = False
-sleep_time = 0.30
+sleep_time = 0.85
 
 default_cursor = {
     "AppStarting": r"%SystemRoot%\Cursors\aero_working.ani",
@@ -538,7 +538,7 @@ def gaze_scroll():
         amount = int(((y - midpoint) / (rect.height / 10)) ** 3)
         actions.mouse_scroll(by_lines=False, y=amount)
 
-    # print(f"gaze_scroll: {midpoint} {rect.height} {amount}")
+    print(f"gaze_scroll: {midpoint} {rect.height} {amount}")
 
 
 def stop_scroll():

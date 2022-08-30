@@ -90,7 +90,6 @@ class BrowserActions:
         # action(browser.title)
 
     def toggle_dev_tools():
-<<<<<<< HEAD
         actions.key('cmd-alt-i')
 
 
@@ -102,6 +101,3 @@ class app_actions:
     def tab_next():
         actions.key("ctrl-tab")
 
-=======
-        actions.key("cmd-alt-i")
->>>>>>> remotes/knausj/main

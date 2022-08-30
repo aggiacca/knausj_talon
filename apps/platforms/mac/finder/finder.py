@@ -1,6 +1,6 @@
 import os
 
-from talon import Context, actions, ui
+from talon import Context, actions, ui, Module
 from talon.mac import applescript
 
 ctx = Context()
