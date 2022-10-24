@@ -4,7 +4,9 @@ mode: user.reading
 
 
 stupid talon: "reading mode active"
-<phrase>: user.move_cursor("right")
+<phrase>: user.read_next_page()
+change direction: user.change_direction()
+go right: user.move_cursor("right")
 go left: user.move_cursor("left")
 go back: user.move_cursor("left")
 last page: user.move_cursor("left")
