@@ -1,14 +1,8 @@
 import os
 
-<<<<<<< HEAD:code/mouse.py
-from talon import Module, actions, app, clip, cron, ctrl, imgui, noise, ui
-from talon_plugins import eye_mouse, eye_zoom_mouse
-from talon_plugins.eye_mouse import config, toggle_camera_overlay, toggle_control
 from time import sleep, time
-=======
-from talon import Context, Module, actions, app, clip, cron, ctrl, imgui, ui
+from talon import Context, Module, actions, app, clip, cron, ctrl, imgui, ui, noise
 from talon_plugins import eye_zoom_mouse
->>>>>>> master:plugin/mouse/mouse.py
 
 key = actions.key
 self = actions.self
@@ -154,53 +148,20 @@ class Actions:
         if setting_mouse_wake_hides_cursor.get() >= 1:
             show_cursor_helper(False)
 
-<<<<<<< HEAD:code/mouse.py
-    def mouse_calibrate():
-        """Start calibration"""
-        eye_mouse.calib_start()
+    # TODO: might not needs this anymore
+    # def mouse_toggle_control_mouse(enabled: bool = None):
+    #     """Toggles control mouse. Pass in a bool to enable it, otherwise toggle the current state"""
+    #     if enabled is not None:
+    #         toggle_control(enabled)
+    #     else:
+    #         actions.user.disable_hiss_mouse()
 
-    def mouse_toggle_control_mouse(enabled: bool = None):
-        """Toggles control mouse. Pass in a bool to enable it, otherwise toggle the current state"""
-        if enabled is not None:
-            toggle_control(enabled)
-        else:
-            actions.user.disable_hiss_mouse()
+    #         # disable zoom mouse automatically if its on
+    #         if eye_zoom_mouse.zoom_mouse.enabled:
+    #             eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
 
-            # disable zoom mouse automatically if its on
-            if eye_zoom_mouse.zoom_mouse.enabled:
-                eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
+    #         toggle_control(not config.control_mouse)
 
-            toggle_control(not config.control_mouse)
-
-    def mouse_toggle_camera_overlay():
-        """Toggles camera overlay"""
-        toggle_camera_overlay(not config.show_camera)
-
-    def mouse_toggle_zoom_mouse():
-        """Toggles zoom mouse"""
-        
-        actions.user.disable_hiss_mouse()
-        # disable direct mouse automatically if its onf
-        if config.control_mouse:
-            toggle_control(not config.control_mouse)
-
-        eye_zoom_mouse.toggle_zoom_mouse(not eye_zoom_mouse.zoom_mouse.enabled)
-
-    def mouse_cancel_zoom_mouse():
-        """Cancel zoom mouse if pending"""
-        if (
-            eye_zoom_mouse.zoom_mouse.enabled
-            and eye_zoom_mouse.zoom_mouse.state != eye_zoom_mouse.STATE_IDLE
-        ):
-            eye_zoom_mouse.zoom_mouse.cancel()
-
-    def mouse_trigger_zoom_mouse():
-        """Trigger zoom mouse if enabled"""
-        if eye_zoom_mouse.zoom_mouse.enabled:
-            eye_zoom_mouse.zoom_mouse.on_pop(eye_zoom_mouse.zoom_mouse.state)
-
-=======
->>>>>>> master:plugin/mouse/mouse.py
     def mouse_drag(button: int):
         """Press and hold/release a specific mouse button for dragging"""
         # Clear any existing drags
@@ -217,16 +178,13 @@ class Actions:
 
     def mouse_sleep():
         """Disables control mouse, zoom mouse, and re-enables cursor"""
-<<<<<<< HEAD:code/mouse.py
-        eye_zoom_mouse.toggle_zoom_mouse(False)
-        actions.user.disable_hiss_mouse()
-        toggle_control(False)
-=======
         actions.tracking.control_zoom_toggle(False)
         actions.tracking.control_toggle(False)
         actions.tracking.control1_toggle(False)
 
->>>>>>> master:plugin/mouse/mouse.py
+        # TODO: need still?
+        actions.user.disable_hiss_mouse()
+
         show_cursor_helper(True)
         stop_scroll()
 
@@ -388,25 +346,14 @@ def show_cursor_helper(show):
         ctrl.cursor_visible(show)
 
 
-<<<<<<< HEAD:code/mouse.py
-#
-# NOTE: Need to toggle the mouse control twice unsaved changes
-#
-def on_pop(active):
-    print("you popped")
-    print(setting_mouse_pop_key.get())
-
-=======
 @ctx.action("user.noise_trigger_pop")
 def on_pop():
->>>>>>> master:plugin/mouse/mouse.py
     if setting_mouse_enable_pop_stops_scroll.get() >= 1 and (gaze_job or scroll_job):
         # Allow pop to stop scroll
         stop_scroll()
-<<<<<<< HEAD:code/mouse.py
     elif (
-        not eye_zoom_mouse.zoom_mouse.enabled
-        and eye_mouse.mouse.attached_tracker is not None
+        not actions.tracking.control_zoom_enabled()
+        and actions.tracking.control_enabled() is not None
     ):
         if setting_mouse_enable_pop_click.get() >= 1:
             if setting_mouse_pop_hold.get() >= 1:
@@ -430,7 +377,7 @@ def on_pop():
 noise.register("pop", on_pop)
 
 #
-# Hissing
+# Hissing (might need updating syntax wise)
 # 
 @mod.action_class
 class HissActions:
@@ -480,9 +427,9 @@ def on_hiss(is_active):
 def hiss_work(active):
     # zoom mouse override
     # print("hiss work")
-    if eye_zoom_mouse.zoom_mouse.enabled:
+    if actions.tracking.control_zoom_enabled() :
         # print("zoom mouse enabled")
-        if (eye_mouse.mouse.attached_tracker is not None and active):
+        if (actions.racking.control_enabled() is not None and active):
             # changing the default didn't make it go faster. only adding more function calls
             actions.user.mouse_scroll_up_continuous()
             actions.user.mouse_scroll_up_continuous()
@@ -493,7 +440,7 @@ def hiss_work(active):
             actions.user.mouse_scroll_up_continuous()
         else:
             actions.user.mouse_scroll_stop()
-    elif eye_mouse.mouse.attached_tracker and hiss_mouse and active:
+    elif actions.racking.control_enabled() and hiss_mouse and active:
         ctrl.mouse_click(0)
     else:
         if setting_hiss_toggle.get() == 1:
@@ -505,28 +452,6 @@ def hiss_work(active):
 noise.register('hiss', on_hiss)
 
 
-=======
-    else:
-        # Otherwise respect the mouse_enable_pop_click setting
-        setting_val = setting_mouse_enable_pop_click.get()
-
-        is_using_eye_tracker = (
-            actions.tracking.control_zoom_enabled()
-            or actions.tracking.control_enabled()
-            or actions.tracking.control1_enabled()
-        )
-        should_click = (
-            setting_val == 2 and not actions.tracking.control_zoom_enabled()
-        ) or (
-            setting_val == 1
-            and is_using_eye_tracker
-            and not actions.tracking.control_zoom_enabled()
-        )
-        if should_click:
-            ctrl.mouse_click(button=0, hold=16000)
-
-
->>>>>>> master:plugin/mouse/mouse.py
 def mouse_scroll(amount):
     def scroll():
         global scroll_amount

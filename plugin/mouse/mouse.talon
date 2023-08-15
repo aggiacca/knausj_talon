@@ -1,42 +1,21 @@
-<<<<<<< HEAD:misc/mouse.talon
-mouse control: user.mouse_toggle_control_mouse()
-mice: user.mouse_toggle_control_mouse()
 hiss mouse: user.mouse_toggle_hiss_mouse()
-zoom mouse: user.mouse_toggle_zoom_mouse()
-camera overlay: user.mouse_toggle_camera_overlay()
-run calibration: user.mouse_calibrate()	
 
-# alternate clicking statements for variety and to avoid strain
-touch:
-	mouse_click(0)
-rich:
-	mouse_click(0)
-
-cliff: 
-	mouse_click(0)
-	# close the mouse grid if open
-	user.grid_close()
-    	# End any open drags
-	# Touch automatically ends left drags so this is for right drags specifically
-	user.mouse_drag_end()
-
-# righty
-rickle: 
-	mouse_click(1)
-	# close the mouse grid if open
-	user.grid_close()
-
-# mid click:
-middle: 
-	mouse_click(2)
-	# close the mouse grid
-	user.grid_close()
-=======
 control mouse: tracking.control_toggle()
+mice: tracking.control_toggle()
 control off: user.mouse_sleep()
 zoom mouse: tracking.control_zoom_toggle()
 camera overlay: tracking.control_debug_toggle()
 run calibration: tracking.calibrate()
+
+cliff:
+    mouse_click(0)
+    # close the mouse grid if open
+    user.grid_close()
+    # End any open drags
+    # Touch automatically ends left drags so this is for right drags specifically
+    user.mouse_drag_end()
+
+
 touch:
     mouse_click(0)
     # close the mouse grid if open
@@ -54,7 +33,6 @@ mid click:
     mouse_click(2)
     # close the mouse grid
     user.grid_close()
->>>>>>> master:plugin/mouse/mouse.talon
 
 #see keys.py for modifiers.
 #defaults
@@ -63,21 +41,18 @@ mid click:
 #option = alt
 #shift
 #super = windows key
-<<<<<<< HEAD:misc/mouse.talon
 <user.modifiers> cliff: 
 	key("{modifiers}:down")
 	mouse_click(0)
 	key("{modifiers}:up")
 	# close the mouse grid
 	user.grid_close()
-
 <user.modifiers> rickle: 
 	key("{modifiers}:down")
 	mouse_click(1)
 	key("{modifiers}:up")
 	# close the mouse grid
 	user.grid_close()
-=======
 <user.modifiers> touch:
     key("{modifiers}:down")
     mouse_click(0)
@@ -90,7 +65,6 @@ mid click:
     key("{modifiers}:up")
     # close the mouse grid
     user.grid_close()
->>>>>>> master:plugin/mouse/mouse.talon
 (dub click | duke):
     mouse_click()
     mouse_click()
