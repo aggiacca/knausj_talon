@@ -25,6 +25,7 @@ site disney: browser.go('https://www.disneyplus.com/home')
 site talon: browser.go('https://search.talonvoice.com/search/')
 site Netflix: browser.go('https://www.netflix.com/browse')
 site YouTube: browser.go('https://www.youtube.com/')
+site Coda: browser.go('https://www.coda.io/')
 
 go private: browser.open_private_window()
 
