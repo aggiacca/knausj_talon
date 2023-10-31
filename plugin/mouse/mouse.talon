@@ -1,4 +1,4 @@
-hiss mouse: user.mouse_toggle_hiss_mouse()
+# hiss mouse: user.mouse_toggle_hiss_mouse()
 
 control mouse: tracking.control_toggle()
 mice: tracking.control_toggle()
@@ -29,7 +29,7 @@ righty:
     # close the mouse grid if open
     user.grid_close()
 
-mid click:
+middle:
     mouse_click(2)
     # close the mouse grid
     user.grid_close()

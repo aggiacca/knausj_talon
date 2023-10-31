@@ -429,7 +429,7 @@ def hiss_work(active):
     # print("hiss work")
     if actions.tracking.control_zoom_enabled() :
         # print("zoom mouse enabled")
-        if (actions.racking.control_enabled() is not None and active):
+        if (actions.tracking.control_enabled() is not None and active):
             # changing the default didn't make it go faster. only adding more function calls
             actions.user.mouse_scroll_up_continuous()
             actions.user.mouse_scroll_up_continuous()
@@ -440,7 +440,7 @@ def hiss_work(active):
             actions.user.mouse_scroll_up_continuous()
         else:
             actions.user.mouse_scroll_stop()
-    elif actions.racking.control_enabled() and hiss_mouse and active:
+    elif actions.tracking.control_enabled() and hiss_mouse and active:
         ctrl.mouse_click(0)
     else:
         if setting_hiss_toggle.get() == 1:
